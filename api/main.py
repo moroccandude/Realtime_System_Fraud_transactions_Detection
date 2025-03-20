@@ -37,7 +37,7 @@ def read_item(item_id: int,item:Item):
 
 @app.get("/api/v1/customer")
 def get_customers():
-    with open("../data/customers.json","r") as file:
+    with open("customers.json","r") as file:
       return json.load(file)
 
 @app.get("/api/v1/transactions")
