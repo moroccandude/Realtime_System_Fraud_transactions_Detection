@@ -6,7 +6,7 @@ on:
       - test  # Runs the pipeline when code is pushed to 'main'
   pull_request:
     branches:
-      - main
+      - test
   workflow_dispatch:  # Allows manual execution
 
 jobs:
