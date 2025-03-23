@@ -1,4 +1,4 @@
-name: ETL Pipeline CI/CD
+7name: ETL Pipeline CI/CD
 on:
   push:
     branches:
@@ -14,7 +14,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
+      -  name : print current directory
+         run: pwd && ls
       - name: Set up Docker
         run: |
           docker --version
