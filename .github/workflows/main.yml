@@ -1,4 +1,4 @@
-name: ETL Pipeline CI/CD
+name: Run full project
 on:
   push:
     branches:
