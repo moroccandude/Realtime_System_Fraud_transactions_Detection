@@ -1,0 +1,378 @@
+[2025-03-22T21:04:19.071+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-22T21:04:19.080+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fraud_detection_pipeline.load_data_to_hive manual__2025-03-22T19:27:34.383701+00:00 [queued]>
+[2025-03-22T21:04:19.086+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fraud_detection_pipeline.load_data_to_hive manual__2025-03-22T19:27:34.383701+00:00 [queued]>
+[2025-03-22T21:04:19.086+0000] {taskinstance.py:2867} INFO - Starting attempt 4 of 4
+[2025-03-22T21:04:19.099+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): load_data_to_hive> on 2025-03-22 19:27:34.383701+00:00
+[2025-03-22T21:04:19.106+0000] {standard_task_runner.py:72} INFO - Started process 278324 to run task
+[2025-03-22T21:04:19.110+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'load_data_to_hive', 'manual__2025-03-22T19:27:34.383701+00:00', '--job-id', '85', '--raw', '--subdir', 'DAGS_FOLDER/dags.py', '--cfg-path', '/tmp/tmpjq7_887b']
+[2025-03-22T21:04:19.112+0000] {standard_task_runner.py:105} INFO - Job 85: Subtask load_data_to_hive
+[2025-03-22T21:04:19.143+0000] {task_command.py:467} INFO - Running <TaskInstance: fraud_detection_pipeline.load_data_to_hive manual__2025-03-22T19:27:34.383701+00:00 [running]> on host usmail-ThinkBook-14-G2-ITL
+[2025-03-22T21:04:19.199+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='fraud_detection_pipeline' AIRFLOW_CTX_TASK_ID='load_data_to_hive' AIRFLOW_CTX_EXECUTION_DATE='2025-03-22T19:27:34.383701+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-22T19:27:34.383701+00:00'
+[2025-03-22T21:04:19.200+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-22T21:04:19.223+0000] {hive.py:475} INFO - USE `default`
+[2025-03-22T21:04:19.350+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C000',
+                array('T00147','T00297','T00299','T00321','T00375','T00436','T00495','T00700','T00860','T00900'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:20.734+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C001',
+                array('T00070','T00105','T00176','T00197','T00209','T00305','T00314','T00471','T00477','T00542','T00575','T00751','T00778','T00857'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:21.273+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C002',
+                array('T00028','T00108','T00189','T00204','T00219','T00251','T00524','T00552','T00577','T00594','T00626','T00884','T00971'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:21.738+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C003',
+                array('T00012','T00086','T00138','T00185','T00400','T00907'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:22.665+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C004',
+                array('T00059','T00308','T00401','T00506','T00558','T00576','T00607','T00705','T00780','T00905','T00909','T00969'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:23.222+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C005',
+                array('T00092','T00106','T00394','T00460','T00648','T00670','T00742','T00768','T00924'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:24.087+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C006',
+                array('T00053','T00122','T00374','T00430','T00528','T00630','T00732','T00774','T00955'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:24.680+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C007',
+                array('T00000','T00170','T00222','T00269','T00529','T00593','T00733','T00758','T00871'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:25.155+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C008',
+                array('T00021','T00060','T00194','T00256','T00258','T00344','T00484','T00505','T00525','T00567','T00592','T00603','T00616','T00622','T00712','T00747','T00878','T00958','T00996'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:25.615+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C009',
+                array('T00083','T00184','T00301','T00396','T00661','T00713','T00720','T00817','T00861'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:26.093+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C010',
+                array('T00309','T00324','T00339','T00466','T00469','T00606','T00641','T00662','T00693','T00735','T00840','T00845','T00887','T00897','T00936','T00957','T00967'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:26.722+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C011',
+                array('T00013','T00023','T00140','T00224','T00268','T00675','T00683','T00707','T00873','T00949','T00978'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:27.220+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C012',
+                array('T00031','T00034','T00047','T00130','T00191','T00229','T00275','T00303','T00373','T00386','T00412','T00447','T00451','T00479','T00544','T00565','T00696'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:28.217+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C013',
+                array('T00139','T00239','T00257','T00274','T00282','T00289','T00342','T00350','T00834','T00882','T00948','T00999'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:29.490+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C014',
+                array('T00084','T00109','T00403','T00404','T00514','T00665'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:30.398+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C015',
+                array('T00071','T00205','T00225','T00579','T00620','T00709','T00731','T00750','T00917'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:30.815+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C016',
+                array('T00039','T00041','T00065','T00073','T00129','T00144','T00348','T00913'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:31.250+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C017',
+                array('T00044','T00072','T00075','T00080','T00333','T00457','T00643','T00674','T00795','T00843','T00919'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:32.052+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C018',
+                array('T00099','T00115','T00181','T00280','T00473','T00543','T00629','T00637','T00697','T00792','T00966'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:32.945+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C019',
+                array('T00057','T00278','T00300','T00563','T00612','T00688','T00779','T00975'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:34.136+0000] {hive.py:475} INFO - 
+            INSERT INTO customers 
+            VALUES (
+                'C020',
+                array('T00038','T00186','T00284','T00335','T00354','T00409','T00426','T00504','T00519','T00739','T00740','T00772','T00809','T00842','T00848','T00862','T00911','T00914'),
+                0,
+                '',
+                ''
+            )
+            
+[2025-03-22T21:04:34.216+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to restarting. Terminating instance.
+[2025-03-22T21:04:34.217+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-03-22T21:04:34.230+0000] {process_utils.py:132} INFO - Sending 15 to group 278324. PIDs of all processes in the group: [278324]
+[2025-03-22T21:04:34.230+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 278324
+[2025-03-22T21:04:34.231+0000] {taskinstance.py:3094} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-03-22T21:04:34.245+0000] {taskinstance.py:3095} ERROR - Stacktrace: 
+  File "/home/usmail/sys_fraud/sys_detection_frauds/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/__main__.py", line 62, in main
+    args.func(args)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 254, in _run_task_by_selected_method
+    return _run_task_by_local_task_job(args, ti)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 322, in _run_task_by_local_task_job
+    ret = run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/jobs/local_task_job_runner.py", line 171, in _execute
+    self.task_runner.start()
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 55, in start
+    self.process = self._start_by_fork()
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 763, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/system_fraud_transactions_detection/airflow_home/dags/dags.py", line 265, in load_data_to_hive
+    cursor.execute(insert_customer_sql)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/pyhive/hive.py", line 480, in execute
+    response = self._connection.client.ExecuteStatement(req)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/TCLIService/TCLIService.py", line 280, in ExecuteStatement
+    return self.recv_ExecuteStatement()
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/TCLIService/TCLIService.py", line 292, in recv_ExecuteStatement
+    (fname, mtype, rseqid) = iprot.readMessageBegin()
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/thrift/protocol/TBinaryProtocol.py", line 135, in readMessageBegin
+    sz = self.readI32()
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/thrift/protocol/TBinaryProtocol.py", line 218, in readI32
+    buff = self.trans.readAll(4)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/thrift/transport/TTransport.py", line 62, in readAll
+    chunk = self.read(sz - have)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/thrift_sasl/__init__.py", line 173, in read
+    self._read_frame()
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/thrift_sasl/__init__.py", line 177, in _read_frame
+    header = self._trans_read_all(4)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/thrift_sasl/__init__.py", line 210, in _trans_read_all
+    return read_all(sz)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/thrift/transport/TTransport.py", line 62, in readAll
+    chunk = self.read(sz - have)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/thrift/transport/TSocket.py", line 157, in read
+    buff = self.handle.recv(sz)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3095, in signal_handler
+    self.log.error("Stacktrace: \n%s", "".join(traceback.format_stack()))
+
+[2025-03-22T21:04:34.252+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 763, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/system_fraud_transactions_detection/airflow_home/dags/dags.py", line 265, in load_data_to_hive
+    cursor.execute(insert_customer_sql)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/pyhive/hive.py", line 480, in execute
+    response = self._connection.client.ExecuteStatement(req)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/TCLIService/TCLIService.py", line 280, in ExecuteStatement
+    return self.recv_ExecuteStatement()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/TCLIService/TCLIService.py", line 292, in recv_ExecuteStatement
+    (fname, mtype, rseqid) = iprot.readMessageBegin()
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/thrift/protocol/TBinaryProtocol.py", line 135, in readMessageBegin
+    sz = self.readI32()
+         ^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/thrift/protocol/TBinaryProtocol.py", line 218, in readI32
+    buff = self.trans.readAll(4)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/thrift/transport/TTransport.py", line 62, in readAll
+    chunk = self.read(sz - have)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/thrift_sasl/__init__.py", line 173, in read
+    self._read_frame()
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/thrift_sasl/__init__.py", line 177, in _read_frame
+    header = self._trans_read_all(4)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/thrift_sasl/__init__.py", line 210, in _trans_read_all
+    return read_all(sz)
+           ^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/thrift/transport/TTransport.py", line 62, in readAll
+    chunk = self.read(sz - have)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/thrift/transport/TSocket.py", line 157, in read
+    buff = self.handle.recv(sz)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3097, in signal_handler
+    raise AirflowTaskTerminated("Task received SIGTERM signal")
+airflow.exceptions.AirflowTaskTerminated: Task received SIGTERM signal
+[2025-03-22T21:04:34.255+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=fraud_detection_pipeline, task_id=load_data_to_hive, run_id=manual__2025-03-22T19:27:34.383701+00:00, execution_date=20250322T192734, start_date=20250322T210419, end_date=20250322T210434
+[2025-03-22T21:04:34.281+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-22T21:04:34.325+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=278324, status='terminated', exitcode=2, started='21:04:18') (278324) terminated with exit code 2

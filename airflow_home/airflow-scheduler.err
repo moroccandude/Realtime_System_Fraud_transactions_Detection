@@ -1,0 +1,21 @@
+[2025-03-22 01:59:00 +0000] [3880642] [INFO] Starting gunicorn 23.0.0
+[2025-03-22 01:59:00 +0000] [3880642] [INFO] Listening at: http://[::]:8793 (3880642)
+[2025-03-22 01:59:00 +0000] [3880642] [INFO] Using worker: sync
+[2025-03-22 01:59:00 +0000] [3880643] [INFO] Booting worker with pid: 3880643
+[2025-03-22 01:59:00 +0000] [3880644] [INFO] Booting worker with pid: 3880644
+cp: cannot stat './data': No such file or directory
+put: `/user/root/opt/hive/warehouse  || true/data/customers.json': File exists
+put: `/user/root/opt/hive/warehouse  || true/data/transactions.json': File exists
+put: `/user/root/opt/hive/warehouse  || true/data/external_data.json': File exists
+cp: cannot stat './data': No such file or directory
+put: `/user/root/opt/hive/warehouse  || true/data/customers.json': File exists
+put: `/user/root/opt/hive/warehouse  || true/data/transactions.json': File exists
+put: `/user/root/opt/hive/warehouse  || true/data/external_data.json': File exists
+cp: cannot stat './data': No such file or directory
+put: `/user/root/opt/hive/warehouse  || true/data/customers.json': File exists
+put: `/user/root/opt/hive/warehouse  || true/data/transactions.json': File exists
+put: `/user/root/opt/hive/warehouse  || true/data/external_data.json': File exists
+cp: cannot stat './data': No such file or directory
+put: `/user/root/opt/hive/warehouse  || true/data/customers.json': File exists
+put: `/user/root/opt/hive/warehouse  || true/data/transactions.json': File exists
+put: `/user/root/opt/hive/warehouse  || true/data/external_data.json': File exists

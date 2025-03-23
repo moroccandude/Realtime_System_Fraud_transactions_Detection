@@ -1,0 +1,494 @@
+2025-03-21 20:49:22,498 WARNING - Could not import pandas. Holidays will not be considered.
+2025-03-21 20:49:22,501 INFO - Loaded executor: SequentialExecutor
+2025-03-21 20:49:22,536 INFO - Starting the scheduler
+2025-03-21 20:49:22,536 INFO - Processing each file at most -1 times
+2025-03-21 20:49:22,544 INFO - Launched DagFileProcessorManager with pid: 3722771
+2025-03-21 20:49:22,545 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 20:49:22,547 INFO - Configured default timezone UTC
+2025-03-21 20:54:22,810 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 20:58:53,574 INFO - Exiting gracefully upon receiving signal 15
+2025-03-21 20:58:53,755 INFO - Sending 15 to group 3722771. PIDs of all processes in the group: []
+2025-03-21 20:58:53,756 INFO - Sending the signal 15 to group 3722771
+2025-03-21 20:58:53,756 INFO - Sending the signal 15 to process 3722771 as process group is missing.
+2025-03-21 20:58:53,761 INFO - Sending 15 to group 3722771. PIDs of all processes in the group: []
+2025-03-21 20:58:53,762 INFO - Sending the signal 15 to group 3722771
+2025-03-21 20:58:53,762 INFO - Sending the signal 15 to process 3722771 as process group is missing.
+2025-03-21 20:58:53,763 INFO - Exited execute loop
+2025-03-21 20:59:16,112 WARNING - Could not import pandas. Holidays will not be considered.
+2025-03-21 20:59:16,123 INFO - Loaded executor: SequentialExecutor
+2025-03-21 20:59:16,163 INFO - Starting the scheduler
+2025-03-21 20:59:16,164 INFO - Processing each file at most -1 times
+2025-03-21 20:59:16,168 INFO - Launched DagFileProcessorManager with pid: 3730245
+2025-03-21 20:59:16,169 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 20:59:16,171 INFO - Configured default timezone UTC
+2025-03-21 21:04:16,394 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 21:09:16,529 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 21:14:16,681 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 21:19:16,706 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 21:24:16,870 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 21:29:17,032 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 22:19:09,227 INFO - Heartbeat recovered after 2729.45 seconds
+2025-03-21 22:19:44,363 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 22:22:30,309 INFO - Exiting gracefully upon receiving signal 15
+2025-03-21 22:22:30,451 INFO - Sending 15 to group 3730245. PIDs of all processes in the group: []
+2025-03-21 22:22:30,451 INFO - Sending the signal 15 to group 3730245
+2025-03-21 22:22:30,452 INFO - Sending the signal 15 to process 3730245 as process group is missing.
+2025-03-21 22:22:30,454 INFO - Sending 15 to group 3730245. PIDs of all processes in the group: []
+2025-03-21 22:22:30,455 INFO - Sending the signal 15 to group 3730245
+2025-03-21 22:22:30,455 INFO - Sending the signal 15 to process 3730245 as process group is missing.
+2025-03-21 22:22:30,455 INFO - Exited execute loop
+2025-03-21 22:23:24,881 INFO - Loaded executor: SequentialExecutor
+2025-03-21 22:23:24,935 INFO - Starting the scheduler
+2025-03-21 22:23:24,936 INFO - Processing each file at most -1 times
+2025-03-21 22:23:24,944 INFO - Launched DagFileProcessorManager with pid: 3762115
+2025-03-21 22:23:24,946 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 22:23:24,950 INFO - Configured default timezone UTC
+2025-03-21 22:28:25,019 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 22:33:25,058 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 22:37:27,085 INFO - DAG fraud_detection_pipeline is at (or above) max_active_runs (1 of 1), not creating any more runs
+2025-03-21 22:37:27,155 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.fetch_data scheduled__2025-03-20T00:00:00+00:00 [scheduled]>
+2025-03-21 22:37:27,155 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-21 22:37:27,156 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.fetch_data scheduled__2025-03-20T00:00:00+00:00 [scheduled]>
+2025-03-21 22:37:27,158 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.fetch_data scheduled__2025-03-20T00:00:00+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-21 22:37:27,158 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='scheduled__2025-03-20T00:00:00+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 1 and queue default
+2025-03-21 22:37:27,158 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'scheduled__2025-03-20T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-21 22:37:27,162 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'scheduled__2025-03-20T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-21 22:37:29,544 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='scheduled__2025-03-20T00:00:00+00:00', try_number=1, map_index=-1)
+2025-03-21 22:37:29,552 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=fetch_data, run_id=scheduled__2025-03-20T00:00:00+00:00, map_index=-1, run_start_date=2025-03-21 22:37:28.872882+00:00, run_end_date=2025-03-21 22:37:29.047621+00:00, run_duration=0.174739, state=up_for_retry, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=3, job_id=4, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2025-03-21 22:37:27.156817+00:00, queued_by_job_id=3, pid=3771532
+2025-03-21 22:38:25,127 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 22:42:29,553 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.fetch_data scheduled__2025-03-20T00:00:00+00:00 [scheduled]>
+2025-03-21 22:42:29,554 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-21 22:42:29,555 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.fetch_data scheduled__2025-03-20T00:00:00+00:00 [scheduled]>
+2025-03-21 22:42:29,558 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.fetch_data scheduled__2025-03-20T00:00:00+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-21 22:42:29,559 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='scheduled__2025-03-20T00:00:00+00:00', try_number=2, map_index=-1) to SequentialExecutor with priority 1 and queue default
+2025-03-21 22:42:29,560 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'scheduled__2025-03-20T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-21 22:42:29,566 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'scheduled__2025-03-20T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-21 22:42:32,039 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='scheduled__2025-03-20T00:00:00+00:00', try_number=2, map_index=-1)
+2025-03-21 22:42:32,043 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=fetch_data, run_id=scheduled__2025-03-20T00:00:00+00:00, map_index=-1, run_start_date=2025-03-21 22:42:31.372488+00:00, run_end_date=2025-03-21 22:42:31.539845+00:00, run_duration=0.167357, state=up_for_retry, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=2, max_tries=3, job_id=5, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2025-03-21 22:42:29.557142+00:00, queued_by_job_id=3, pid=3774851
+2025-03-21 22:43:25,205 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 22:47:32,305 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.fetch_data scheduled__2025-03-20T00:00:00+00:00 [scheduled]>
+2025-03-21 22:47:32,306 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-21 22:47:32,306 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.fetch_data scheduled__2025-03-20T00:00:00+00:00 [scheduled]>
+2025-03-21 22:47:32,308 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.fetch_data scheduled__2025-03-20T00:00:00+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-21 22:47:32,309 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='scheduled__2025-03-20T00:00:00+00:00', try_number=3, map_index=-1) to SequentialExecutor with priority 1 and queue default
+2025-03-21 22:47:32,310 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'scheduled__2025-03-20T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-21 22:47:32,314 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'scheduled__2025-03-20T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-21 22:47:34,632 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='scheduled__2025-03-20T00:00:00+00:00', try_number=3, map_index=-1)
+2025-03-21 22:47:34,635 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=fetch_data, run_id=scheduled__2025-03-20T00:00:00+00:00, map_index=-1, run_start_date=2025-03-21 22:47:34.005560+00:00, run_end_date=2025-03-21 22:47:34.195832+00:00, run_duration=0.190272, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=3, max_tries=3, job_id=6, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2025-03-21 22:47:32.307530+00:00, queued_by_job_id=3, pid=3778728
+2025-03-21 22:47:34,683 INFO - Marking run <DagRun fraud_detection_pipeline @ 2025-03-20 00:00:00+00:00: scheduled__2025-03-20T00:00:00+00:00, state:running, queued_at: 2025-03-21 22:37:27.073477+00:00. externally triggered: False> successful
+2025-03-21 22:47:34,684 INFO - DagRun Finished: dag_id=fraud_detection_pipeline, execution_date=2025-03-20 00:00:00+00:00, run_id=scheduled__2025-03-20T00:00:00+00:00, run_start_date=2025-03-21 22:37:27.107131+00:00, run_end_date=2025-03-21 22:47:34.684228+00:00, run_duration=607.577097, state=success, external_trigger=False, run_type=scheduled, data_interval_start=2025-03-20 00:00:00+00:00, data_interval_end=2025-03-21 00:00:00+00:00, dag_hash=ff7276da9abc7623b0f7c23e0b4e4be0
+2025-03-21 22:47:34,687 INFO - Setting next_dagrun for fraud_detection_pipeline to 2025-03-21 00:00:00+00:00, run_after=2025-03-22 00:00:00+00:00
+2025-03-21 22:48:25,256 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 22:53:25,307 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 22:58:26,098 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 23:03:26,154 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 23:08:26,207 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 23:13:26,262 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 23:18:26,317 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 23:23:26,372 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 23:28:26,425 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 23:33:26,486 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 23:38:26,540 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 23:43:26,582 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 23:48:26,632 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-21 23:53:26,676 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 00:57:29,837 INFO - DAG fraud_detection_pipeline is at (or above) max_active_runs (1 of 1), not creating any more runs
+2025-03-22 00:57:29,878 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.fetch_data scheduled__2025-03-21T00:00:00+00:00 [scheduled]>
+2025-03-22 00:57:29,878 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 00:57:29,879 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.fetch_data scheduled__2025-03-21T00:00:00+00:00 [scheduled]>
+2025-03-22 00:57:29,880 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.fetch_data scheduled__2025-03-21T00:00:00+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 00:57:29,882 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='scheduled__2025-03-21T00:00:00+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 1 and queue default
+2025-03-22 00:57:29,882 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'scheduled__2025-03-21T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 00:57:29,899 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'scheduled__2025-03-21T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 00:57:32,237 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='scheduled__2025-03-21T00:00:00+00:00', try_number=1, map_index=-1)
+2025-03-22 00:57:32,240 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=fetch_data, run_id=scheduled__2025-03-21T00:00:00+00:00, map_index=-1, run_start_date=2025-03-22 00:57:31.719481+00:00, run_end_date=2025-03-22 00:57:31.918466+00:00, run_duration=0.198985, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=3, job_id=7, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2025-03-22 00:57:29.879890+00:00, queued_by_job_id=3, pid=3831215
+2025-03-22 00:57:32,258 INFO - Heartbeat recovered after 3586.55 seconds
+2025-03-22 00:57:32,291 INFO - Marking run <DagRun fraud_detection_pipeline @ 2025-03-21 00:00:00+00:00: scheduled__2025-03-21T00:00:00+00:00, state:running, queued_at: 2025-03-22 00:57:29.830398+00:00. externally triggered: False> successful
+2025-03-22 00:57:32,291 INFO - DagRun Finished: dag_id=fraud_detection_pipeline, execution_date=2025-03-21 00:00:00+00:00, run_id=scheduled__2025-03-21T00:00:00+00:00, run_start_date=2025-03-22 00:57:29.850032+00:00, run_end_date=2025-03-22 00:57:32.291368+00:00, run_duration=2.441336, state=success, external_trigger=False, run_type=scheduled, data_interval_start=2025-03-21 00:00:00+00:00, data_interval_end=2025-03-22 00:00:00+00:00, dag_hash=ff7276da9abc7623b0f7c23e0b4e4be0
+2025-03-22 00:57:32,292 INFO - Setting next_dagrun for fraud_detection_pipeline to 2025-03-22 00:00:00+00:00, run_after=2025-03-23 00:00:00+00:00
+2025-03-22 00:58:07,933 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 01:03:07,970 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 01:08:08,024 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 01:13:08,060 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 01:18:08,101 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 01:21:04,064 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.fetch_data manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>
+2025-03-22 01:21:04,064 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 01:21:04,064 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.fetch_data manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>
+2025-03-22 01:21:04,065 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.fetch_data manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 01:21:04,066 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='manual__2025-03-22T01:21:02.990581+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 1 and queue default
+2025-03-22 01:21:04,066 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'manual__2025-03-22T01:21:02.990581+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 01:21:04,070 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'manual__2025-03-22T01:21:02.990581+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 01:21:05,673 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='manual__2025-03-22T01:21:02.990581+00:00', try_number=1, map_index=-1)
+2025-03-22 01:21:05,675 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=fetch_data, run_id=manual__2025-03-22T01:21:02.990581+00:00, map_index=-1, run_start_date=2025-03-22 01:21:05.217765+00:00, run_end_date=2025-03-22 01:21:05.339559+00:00, run_duration=0.121794, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=3, job_id=9, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2025-03-22 01:21:04.065348+00:00, queued_by_job_id=3, pid=3849902
+2025-03-22 01:21:05,697 INFO - Marking run <DagRun fraud_detection_pipeline @ 2025-03-22 01:21:02.990581+00:00: manual__2025-03-22T01:21:02.990581+00:00, state:running, queued_at: 2025-03-22 01:21:03.001004+00:00. externally triggered: True> successful
+2025-03-22 01:21:05,698 INFO - DagRun Finished: dag_id=fraud_detection_pipeline, execution_date=2025-03-22 01:21:02.990581+00:00, run_id=manual__2025-03-22T01:21:02.990581+00:00, run_start_date=2025-03-22 01:21:04.040848+00:00, run_end_date=2025-03-22 01:21:05.698116+00:00, run_duration=1.657268, state=success, external_trigger=True, run_type=manual, data_interval_start=2025-03-21 01:21:02.990581+00:00, data_interval_end=2025-03-22 01:21:02.990581+00:00, dag_hash=ff7276da9abc7623b0f7c23e0b4e4be0
+2025-03-22 01:22:25,319 INFO - Exiting gracefully upon receiving signal 15
+2025-03-22 01:22:26,334 INFO - Sending 15 to group 3762115. PIDs of all processes in the group: [3762115]
+2025-03-22 01:22:26,334 INFO - Sending the signal 15 to group 3762115
+2025-03-22 01:22:26,587 INFO - Process psutil.Process(pid=3762115, status='terminated', exitcode=0, started='22:23:25') (3762115) terminated with exit code 0
+2025-03-22 01:22:26,609 INFO - Sending 15 to group 3762115. PIDs of all processes in the group: []
+2025-03-22 01:22:26,609 INFO - Sending the signal 15 to group 3762115
+2025-03-22 01:22:26,609 INFO - Sending the signal 15 to process 3762115 as process group is missing.
+2025-03-22 01:22:26,610 INFO - Exited execute loop
+2025-03-22 01:22:31,483 INFO - Loaded executor: SequentialExecutor
+2025-03-22 01:22:31,517 INFO - Starting the scheduler
+2025-03-22 01:22:31,518 INFO - Processing each file at most -1 times
+2025-03-22 01:22:31,522 INFO - Launched DagFileProcessorManager with pid: 3851224
+2025-03-22 01:22:31,523 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 01:22:31,525 INFO - Configured default timezone UTC
+2025-03-22 01:27:31,557 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 01:27:51,942 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.fetch_data manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>
+2025-03-22 01:27:51,943 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 01:27:51,943 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.fetch_data manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>
+2025-03-22 01:27:51,945 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.fetch_data manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 01:27:51,945 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='manual__2025-03-22T01:21:02.990581+00:00', try_number=2, map_index=-1) to SequentialExecutor with priority 2 and queue default
+2025-03-22 01:27:51,945 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'manual__2025-03-22T01:21:02.990581+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 01:27:51,949 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'manual__2025-03-22T01:21:02.990581+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 01:27:53,548 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='manual__2025-03-22T01:21:02.990581+00:00', try_number=2, map_index=-1)
+2025-03-22 01:27:53,552 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=fetch_data, run_id=manual__2025-03-22T01:21:02.990581+00:00, map_index=-1, run_start_date=2025-03-22 01:27:53.081834+00:00, run_end_date=2025-03-22 01:27:53.216647+00:00, run_duration=0.134813, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=2, max_tries=4, job_id=11, pool=default_pool, queue=default, priority_weight=2, operator=PythonOperator, queued_dttm=2025-03-22 01:27:51.944086+00:00, queued_by_job_id=10, pid=3855243
+2025-03-22 01:27:53,587 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>
+2025-03-22 01:27:53,587 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 01:27:53,588 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>
+2025-03-22 01:27:53,588 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 01:27:53,589 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='load_to_hdfs', run_id='manual__2025-03-22T01:21:02.990581+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 1 and queue default
+2025-03-22 01:27:53,589 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'load_to_hdfs', 'manual__2025-03-22T01:21:02.990581+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 01:27:53,592 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'load_to_hdfs', 'manual__2025-03-22T01:21:02.990581+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 01:27:55,185 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='load_to_hdfs', run_id='manual__2025-03-22T01:21:02.990581+00:00', try_number=1, map_index=-1)
+2025-03-22 01:27:55,188 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=load_to_hdfs, run_id=manual__2025-03-22T01:21:02.990581+00:00, map_index=-1, run_start_date=2025-03-22 01:27:54.712507+00:00, run_end_date=2025-03-22 01:27:54.802560+00:00, run_duration=0.090053, state=up_for_retry, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=3, job_id=12, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2025-03-22 01:27:53.588404+00:00, queued_by_job_id=10, pid=3855267
+2025-03-22 01:32:31,589 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 01:32:55,238 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>
+2025-03-22 01:32:55,238 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 01:32:55,238 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>
+2025-03-22 01:32:55,239 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 01:32:55,239 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='load_to_hdfs', run_id='manual__2025-03-22T01:21:02.990581+00:00', try_number=2, map_index=-1) to SequentialExecutor with priority 1 and queue default
+2025-03-22 01:32:55,239 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'load_to_hdfs', 'manual__2025-03-22T01:21:02.990581+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 01:32:55,242 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'load_to_hdfs', 'manual__2025-03-22T01:21:02.990581+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 01:32:56,767 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='load_to_hdfs', run_id='manual__2025-03-22T01:21:02.990581+00:00', try_number=2, map_index=-1)
+2025-03-22 01:32:56,769 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=load_to_hdfs, run_id=manual__2025-03-22T01:21:02.990581+00:00, map_index=-1, run_start_date=2025-03-22 01:32:56.373048+00:00, run_end_date=2025-03-22 01:32:56.460667+00:00, run_duration=0.087619, state=up_for_retry, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=2, max_tries=3, job_id=13, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2025-03-22 01:32:55.238866+00:00, queued_by_job_id=10, pid=3859190
+2025-03-22 01:37:31,615 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 01:41:36,956 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>
+2025-03-22 01:41:36,956 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 01:41:36,956 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>
+2025-03-22 01:41:36,957 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 01:41:36,958 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='load_to_hdfs', run_id='manual__2025-03-22T01:21:02.990581+00:00', try_number=3, map_index=-1) to SequentialExecutor with priority 1 and queue default
+2025-03-22 01:41:36,958 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'load_to_hdfs', 'manual__2025-03-22T01:21:02.990581+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 01:41:36,961 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'load_to_hdfs', 'manual__2025-03-22T01:21:02.990581+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 01:41:42,085 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='load_to_hdfs', run_id='manual__2025-03-22T01:21:02.990581+00:00', try_number=3, map_index=-1)
+2025-03-22 01:41:42,088 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=load_to_hdfs, run_id=manual__2025-03-22T01:21:02.990581+00:00, map_index=-1, run_start_date=2025-03-22 01:41:38.154433+00:00, run_end_date=2025-03-22 01:41:41.749091+00:00, run_duration=3.594658, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=3, max_tries=3, job_id=14, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2025-03-22 01:41:36.957212+00:00, queued_by_job_id=10, pid=3866034
+2025-03-22 01:41:42,132 INFO - Marking run <DagRun fraud_detection_pipeline @ 2025-03-22 01:21:02.990581+00:00: manual__2025-03-22T01:21:02.990581+00:00, state:running, queued_at: 2025-03-22 01:27:51.749365+00:00. externally triggered: True> successful
+2025-03-22 01:41:42,133 INFO - DagRun Finished: dag_id=fraud_detection_pipeline, execution_date=2025-03-22 01:21:02.990581+00:00, run_id=manual__2025-03-22T01:21:02.990581+00:00, run_start_date=2025-03-22 01:27:51.895604+00:00, run_end_date=2025-03-22 01:41:42.133230+00:00, run_duration=830.237626, state=success, external_trigger=True, run_type=manual, data_interval_start=2025-03-21 01:21:02.990581+00:00, data_interval_end=2025-03-22 01:21:02.990581+00:00, dag_hash=220285e4e0565df773d1acf3c49a47b2
+2025-03-22 01:42:05,589 INFO - Exiting gracefully upon receiving signal 15
+2025-03-22 01:42:06,599 INFO - Sending 15 to group 3851224. PIDs of all processes in the group: [3851224]
+2025-03-22 01:42:06,599 INFO - Sending the signal 15 to group 3851224
+2025-03-22 01:42:06,691 INFO - Process psutil.Process(pid=3851224, status='terminated', exitcode=0, started='01:22:31') (3851224) terminated with exit code 0
+2025-03-22 01:42:06,712 INFO - Sending 15 to group 3851224. PIDs of all processes in the group: []
+2025-03-22 01:42:06,713 INFO - Sending the signal 15 to group 3851224
+2025-03-22 01:42:06,713 INFO - Sending the signal 15 to process 3851224 as process group is missing.
+2025-03-22 01:42:06,713 INFO - Exited execute loop
+2025-03-22 01:42:11,133 INFO - Loaded executor: SequentialExecutor
+2025-03-22 01:42:11,160 INFO - Starting the scheduler
+2025-03-22 01:42:11,161 INFO - Processing each file at most -1 times
+2025-03-22 01:42:11,167 INFO - Launched DagFileProcessorManager with pid: 3866771
+2025-03-22 01:42:11,168 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 01:42:11,171 INFO - Configured default timezone UTC
+2025-03-22 01:46:39,042 INFO - Exiting gracefully upon receiving signal 15
+2025-03-22 01:46:40,064 INFO - Sending 15 to group 3866771. PIDs of all processes in the group: [3866771]
+2025-03-22 01:46:40,064 INFO - Sending the signal 15 to group 3866771
+2025-03-22 01:46:40,156 INFO - Process psutil.Process(pid=3866771, status='terminated', exitcode=0, started='01:42:11') (3866771) terminated with exit code 0
+2025-03-22 01:46:40,169 INFO - Sending 15 to group 3866771. PIDs of all processes in the group: []
+2025-03-22 01:46:40,170 INFO - Sending the signal 15 to group 3866771
+2025-03-22 01:46:40,170 INFO - Sending the signal 15 to process 3866771 as process group is missing.
+2025-03-22 01:46:40,170 INFO - Exited execute loop
+2025-03-22 01:46:43,969 INFO - Loaded executor: SequentialExecutor
+2025-03-22 01:46:44,009 INFO - Starting the scheduler
+2025-03-22 01:46:44,009 INFO - Processing each file at most -1 times
+2025-03-22 01:46:44,014 INFO - Launched DagFileProcessorManager with pid: 3870427
+2025-03-22 01:46:44,016 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 01:46:44,019 INFO - Configured default timezone UTC
+2025-03-22 01:51:10,284 INFO - Exiting gracefully upon receiving signal 15
+2025-03-22 01:51:11,302 INFO - Sending 15 to group 3870427. PIDs of all processes in the group: [3870427]
+2025-03-22 01:51:11,302 INFO - Sending the signal 15 to group 3870427
+2025-03-22 01:51:11,395 INFO - Process psutil.Process(pid=3870427, status='terminated', exitcode=0, started='01:46:43') (3870427) terminated with exit code 0
+2025-03-22 01:51:11,406 INFO - Sending 15 to group 3870427. PIDs of all processes in the group: []
+2025-03-22 01:51:11,407 INFO - Sending the signal 15 to group 3870427
+2025-03-22 01:51:11,407 INFO - Sending the signal 15 to process 3870427 as process group is missing.
+2025-03-22 01:51:11,407 INFO - Exited execute loop
+2025-03-22 01:51:15,859 INFO - Loaded executor: SequentialExecutor
+2025-03-22 01:51:15,882 INFO - Starting the scheduler
+2025-03-22 01:51:15,883 INFO - Processing each file at most -1 times
+2025-03-22 01:51:15,887 INFO - Launched DagFileProcessorManager with pid: 3874164
+2025-03-22 01:51:15,889 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 01:51:15,890 INFO - Configured default timezone UTC
+2025-03-22 01:51:55,427 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.fetch_data manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>
+2025-03-22 01:51:55,427 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 01:51:55,427 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.fetch_data manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>
+2025-03-22 01:51:55,429 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.fetch_data manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 01:51:55,429 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='manual__2025-03-22T01:51:54.430740+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 3 and queue default
+2025-03-22 01:51:55,429 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'manual__2025-03-22T01:51:54.430740+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 01:51:55,432 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'manual__2025-03-22T01:51:54.430740+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 01:51:57,115 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='manual__2025-03-22T01:51:54.430740+00:00', try_number=1, map_index=-1)
+2025-03-22 01:51:57,120 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=fetch_data, run_id=manual__2025-03-22T01:51:54.430740+00:00, map_index=-1, run_start_date=2025-03-22 01:51:56.635223+00:00, run_end_date=2025-03-22 01:51:56.753697+00:00, run_duration=0.118474, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=3, job_id=18, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2025-03-22 01:51:55.428210+00:00, queued_by_job_id=17, pid=3874645
+2025-03-22 01:51:57,169 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>
+2025-03-22 01:51:57,170 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 01:51:57,170 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>
+2025-03-22 01:51:57,171 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 01:51:57,171 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='load_to_hdfs', run_id='manual__2025-03-22T01:51:54.430740+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 2 and queue default
+2025-03-22 01:51:57,171 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'load_to_hdfs', 'manual__2025-03-22T01:51:54.430740+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 01:51:57,175 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'load_to_hdfs', 'manual__2025-03-22T01:51:54.430740+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 01:52:01,672 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='load_to_hdfs', run_id='manual__2025-03-22T01:51:54.430740+00:00', try_number=1, map_index=-1)
+2025-03-22 01:52:01,674 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=load_to_hdfs, run_id=manual__2025-03-22T01:51:54.430740+00:00, map_index=-1, run_start_date=2025-03-22 01:51:58.330299+00:00, run_end_date=2025-03-22 01:52:01.284611+00:00, run_duration=2.954312, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=3, job_id=19, pool=default_pool, queue=default, priority_weight=2, operator=PythonOperator, queued_dttm=2025-03-22 01:51:57.170864+00:00, queued_by_job_id=17, pid=3874668
+2025-03-22 01:52:01,716 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.connect_to_hdfs manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>
+2025-03-22 01:52:01,716 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 01:52:01,716 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.connect_to_hdfs manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>
+2025-03-22 01:52:01,717 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.connect_to_hdfs manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 01:52:01,718 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='connect_to_hdfs', run_id='manual__2025-03-22T01:51:54.430740+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 1 and queue default
+2025-03-22 01:52:01,718 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'connect_to_hdfs', 'manual__2025-03-22T01:51:54.430740+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 01:52:01,721 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'connect_to_hdfs', 'manual__2025-03-22T01:51:54.430740+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 01:52:03,217 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='connect_to_hdfs', run_id='manual__2025-03-22T01:51:54.430740+00:00', try_number=1, map_index=-1)
+2025-03-22 01:52:03,220 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=connect_to_hdfs, run_id=manual__2025-03-22T01:51:54.430740+00:00, map_index=-1, run_start_date=2025-03-22 01:52:02.790377+00:00, run_end_date=2025-03-22 01:52:02.876531+00:00, run_duration=0.086154, state=up_for_retry, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=3, job_id=20, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2025-03-22 01:52:01.717241+00:00, queued_by_job_id=17, pid=3874901
+2025-03-22 01:56:15,964 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 01:57:03,897 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.connect_to_hdfs manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>
+2025-03-22 01:57:03,897 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 01:57:03,897 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.connect_to_hdfs manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>
+2025-03-22 01:57:03,898 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.connect_to_hdfs manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 01:57:03,898 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='connect_to_hdfs', run_id='manual__2025-03-22T01:51:54.430740+00:00', try_number=2, map_index=-1) to SequentialExecutor with priority 1 and queue default
+2025-03-22 01:57:03,898 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'connect_to_hdfs', 'manual__2025-03-22T01:51:54.430740+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 01:57:03,902 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'connect_to_hdfs', 'manual__2025-03-22T01:51:54.430740+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 01:57:05,187 ERROR - Failed to execute task Command '['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'connect_to_hdfs', 'manual__2025-03-22T01:51:54.430740+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']' returned non-zero exit status 1..
+2025-03-22 01:57:05,188 INFO - Received executor event with state failed for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='connect_to_hdfs', run_id='manual__2025-03-22T01:51:54.430740+00:00', try_number=2, map_index=-1)
+2025-03-22 01:57:05,190 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=connect_to_hdfs, run_id=manual__2025-03-22T01:51:54.430740+00:00, map_index=-1, run_start_date=2025-03-22 01:52:02.790377+00:00, run_end_date=2025-03-22 01:52:02.876531+00:00, run_duration=0.086154, state=queued, executor=SequentialExecutor(parallelism=32), executor_state=failed, try_number=2, max_tries=3, job_id=20, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2025-03-22 01:57:03.897915+00:00, queued_by_job_id=17, pid=3874901
+2025-03-22 01:57:05,191 ERROR - Executor SequentialExecutor(parallelism=32) reported that the task instance <TaskInstance: fraud_detection_pipeline.connect_to_hdfs manual__2025-03-22T01:51:54.430740+00:00 [queued]> finished with state failed, but the task instance's state attribute is queued. Learn more: https://airflow.apache.org/docs/apache-airflow/stable/troubleshooting.html#task-state-changed-externally
+2025-03-22 01:57:05,203 ERROR - Executor SequentialExecutor(parallelism=32) reported that the task instance <TaskInstance: fraud_detection_pipeline.connect_to_hdfs manual__2025-03-22T01:51:54.430740+00:00 [queued]> finished with state failed, but the task instance's state attribute is queued. Learn more: https://airflow.apache.org/docs/apache-airflow/stable/troubleshooting.html#task-state-changed-externally
+2025-03-22 01:57:05,210 INFO - Marking task as UP_FOR_RETRY. dag_id=fraud_detection_pipeline, task_id=connect_to_hdfs, run_id=manual__2025-03-22T01:51:54.430740+00:00, execution_date=20250322T015154, start_date=20250322T015202, end_date=20250322T015705
+2025-03-22 01:58:18,698 INFO - Exiting gracefully upon receiving signal 15
+2025-03-22 01:58:19,716 INFO - Sending 15 to group 3874164. PIDs of all processes in the group: [3874164]
+2025-03-22 01:58:19,717 INFO - Sending the signal 15 to group 3874164
+2025-03-22 01:58:19,809 INFO - Process psutil.Process(pid=3874164, status='terminated', exitcode=0, started='01:51:15') (3874164) terminated with exit code 0
+2025-03-22 01:58:19,824 INFO - Sending 15 to group 3874164. PIDs of all processes in the group: []
+2025-03-22 01:58:19,824 INFO - Sending the signal 15 to group 3874164
+2025-03-22 01:58:19,824 INFO - Sending the signal 15 to process 3874164 as process group is missing.
+2025-03-22 01:58:19,825 INFO - Exited execute loop
+2025-03-22 01:58:22,821 INFO - Loaded executor: SequentialExecutor
+2025-03-22 01:58:22,845 INFO - Starting the scheduler
+2025-03-22 01:58:22,846 INFO - Processing each file at most -1 times
+2025-03-22 01:58:22,851 INFO - Launched DagFileProcessorManager with pid: 3880019
+2025-03-22 01:58:22,852 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 01:58:22,854 INFO - Configured default timezone UTC
+2025-03-22 01:58:55,241 INFO - Exiting gracefully upon receiving signal 15
+2025-03-22 01:58:56,253 INFO - Sending 15 to group 3880019. PIDs of all processes in the group: [3880019]
+2025-03-22 01:58:56,253 INFO - Sending the signal 15 to group 3880019
+2025-03-22 01:58:56,345 INFO - Process psutil.Process(pid=3880019, status='terminated', exitcode=0, started='01:58:22') (3880019) terminated with exit code 0
+2025-03-22 01:58:56,361 INFO - Sending 15 to group 3880019. PIDs of all processes in the group: []
+2025-03-22 01:58:56,361 INFO - Sending the signal 15 to group 3880019
+2025-03-22 01:58:56,362 INFO - Sending the signal 15 to process 3880019 as process group is missing.
+2025-03-22 01:58:56,362 INFO - Exited execute loop
+2025-03-22 01:59:00,747 INFO - Loaded executor: SequentialExecutor
+2025-03-22 01:59:00,791 INFO - Starting the scheduler
+2025-03-22 01:59:00,792 INFO - Processing each file at most -1 times
+2025-03-22 01:59:00,797 INFO - Launched DagFileProcessorManager with pid: 3880645
+2025-03-22 01:59:00,797 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 01:59:00,799 INFO - Configured default timezone UTC
+2025-03-22 02:00:25,985 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.fetch_data manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>
+2025-03-22 02:00:25,986 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 02:00:25,986 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.fetch_data manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>
+2025-03-22 02:00:25,987 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.fetch_data manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 02:00:25,987 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='manual__2025-03-22T01:51:54.430740+00:00', try_number=2, map_index=-1) to SequentialExecutor with priority 3 and queue default
+2025-03-22 02:00:25,988 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'manual__2025-03-22T01:51:54.430740+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:25,991 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'manual__2025-03-22T01:51:54.430740+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:27,638 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='manual__2025-03-22T01:51:54.430740+00:00', try_number=2, map_index=-1)
+2025-03-22 02:00:27,642 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=fetch_data, run_id=manual__2025-03-22T01:51:54.430740+00:00, map_index=-1, run_start_date=2025-03-22 02:00:27.151114+00:00, run_end_date=2025-03-22 02:00:27.267509+00:00, run_duration=0.116395, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=2, max_tries=4, job_id=23, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2025-03-22 02:00:25.986671+00:00, queued_by_job_id=22, pid=3881657
+2025-03-22 02:00:27,699 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>
+2025-03-22 02:00:27,699 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 02:00:27,700 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>
+2025-03-22 02:00:27,701 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 02:00:27,701 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='load_to_hdfs', run_id='manual__2025-03-22T01:51:54.430740+00:00', try_number=2, map_index=-1) to SequentialExecutor with priority 2 and queue default
+2025-03-22 02:00:27,701 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'load_to_hdfs', 'manual__2025-03-22T01:51:54.430740+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:27,705 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'load_to_hdfs', 'manual__2025-03-22T01:51:54.430740+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:32,112 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='load_to_hdfs', run_id='manual__2025-03-22T01:51:54.430740+00:00', try_number=2, map_index=-1)
+2025-03-22 02:00:32,115 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=load_to_hdfs, run_id=manual__2025-03-22T01:51:54.430740+00:00, map_index=-1, run_start_date=2025-03-22 02:00:28.905152+00:00, run_end_date=2025-03-22 02:00:31.705718+00:00, run_duration=2.800566, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=2, max_tries=4, job_id=24, pool=default_pool, queue=default, priority_weight=2, operator=PythonOperator, queued_dttm=2025-03-22 02:00:27.700688+00:00, queued_by_job_id=22, pid=3881683
+2025-03-22 02:00:32,262 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.connect_to_hdfs manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>
+2025-03-22 02:00:32,262 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 02:00:32,262 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.connect_to_hdfs manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>
+2025-03-22 02:00:32,263 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.connect_to_hdfs manual__2025-03-22T01:51:54.430740+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 02:00:32,263 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='connect_to_hdfs', run_id='manual__2025-03-22T01:51:54.430740+00:00', try_number=3, map_index=-1) to SequentialExecutor with priority 1 and queue default
+2025-03-22 02:00:32,263 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'connect_to_hdfs', 'manual__2025-03-22T01:51:54.430740+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:32,267 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'connect_to_hdfs', 'manual__2025-03-22T01:51:54.430740+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:33,886 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='connect_to_hdfs', run_id='manual__2025-03-22T01:51:54.430740+00:00', try_number=3, map_index=-1)
+2025-03-22 02:00:33,888 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=connect_to_hdfs, run_id=manual__2025-03-22T01:51:54.430740+00:00, map_index=-1, run_start_date=2025-03-22 02:00:33.390313+00:00, run_end_date=2025-03-22 02:00:33.504378+00:00, run_duration=0.114065, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=3, max_tries=5, job_id=25, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2025-03-22 02:00:32.262829+00:00, queued_by_job_id=22, pid=3881914
+2025-03-22 02:00:33,937 INFO - Marking run <DagRun fraud_detection_pipeline @ 2025-03-22 01:51:54.430740+00:00: manual__2025-03-22T01:51:54.430740+00:00, state:running, queued_at: 2025-03-22 01:51:54.439080+00:00. externally triggered: True> successful
+2025-03-22 02:00:33,937 INFO - DagRun Finished: dag_id=fraud_detection_pipeline, execution_date=2025-03-22 01:51:54.430740+00:00, run_id=manual__2025-03-22T01:51:54.430740+00:00, run_start_date=2025-03-22 01:51:55.400916+00:00, run_end_date=2025-03-22 02:00:33.937851+00:00, run_duration=518.536935, state=success, external_trigger=True, run_type=manual, data_interval_start=2025-03-21 01:51:54.430740+00:00, data_interval_end=2025-03-22 01:51:54.430740+00:00, dag_hash=25b699df499440ee3f9cdb70156336fb
+2025-03-22 02:00:35,015 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.fetch_data scheduled__2025-03-20T00:00:00+00:00 [scheduled]>
+2025-03-22 02:00:35,015 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 02:00:35,015 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.fetch_data scheduled__2025-03-20T00:00:00+00:00 [scheduled]>
+2025-03-22 02:00:35,016 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.fetch_data scheduled__2025-03-20T00:00:00+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 02:00:35,016 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='scheduled__2025-03-20T00:00:00+00:00', try_number=4, map_index=-1) to SequentialExecutor with priority 3 and queue default
+2025-03-22 02:00:35,016 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'scheduled__2025-03-20T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:35,019 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'scheduled__2025-03-20T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:36,610 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='scheduled__2025-03-20T00:00:00+00:00', try_number=4, map_index=-1)
+2025-03-22 02:00:36,612 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=fetch_data, run_id=scheduled__2025-03-20T00:00:00+00:00, map_index=-1, run_start_date=2025-03-22 02:00:36.138366+00:00, run_end_date=2025-03-22 02:00:36.254310+00:00, run_duration=0.115944, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=4, max_tries=6, job_id=26, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2025-03-22 02:00:35.015823+00:00, queued_by_job_id=22, pid=3881976
+2025-03-22 02:00:36,644 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.load_to_hdfs scheduled__2025-03-20T00:00:00+00:00 [scheduled]>
+2025-03-22 02:00:36,644 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 02:00:36,644 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.load_to_hdfs scheduled__2025-03-20T00:00:00+00:00 [scheduled]>
+2025-03-22 02:00:36,645 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.load_to_hdfs scheduled__2025-03-20T00:00:00+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 02:00:36,645 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='load_to_hdfs', run_id='scheduled__2025-03-20T00:00:00+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 2 and queue default
+2025-03-22 02:00:36,646 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'load_to_hdfs', 'scheduled__2025-03-20T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:36,649 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'load_to_hdfs', 'scheduled__2025-03-20T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:40,918 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='load_to_hdfs', run_id='scheduled__2025-03-20T00:00:00+00:00', try_number=1, map_index=-1)
+2025-03-22 02:00:40,920 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=load_to_hdfs, run_id=scheduled__2025-03-20T00:00:00+00:00, map_index=-1, run_start_date=2025-03-22 02:00:37.754369+00:00, run_end_date=2025-03-22 02:00:40.573547+00:00, run_duration=2.819178, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=3, job_id=27, pool=default_pool, queue=default, priority_weight=2, operator=PythonOperator, queued_dttm=2025-03-22 02:00:36.644924+00:00, queued_by_job_id=22, pid=3882016
+2025-03-22 02:00:40,966 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.connect_to_hdfs scheduled__2025-03-20T00:00:00+00:00 [scheduled]>
+2025-03-22 02:00:40,966 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 02:00:40,967 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.connect_to_hdfs scheduled__2025-03-20T00:00:00+00:00 [scheduled]>
+2025-03-22 02:00:40,967 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.connect_to_hdfs scheduled__2025-03-20T00:00:00+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 02:00:40,968 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='connect_to_hdfs', run_id='scheduled__2025-03-20T00:00:00+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 1 and queue default
+2025-03-22 02:00:40,968 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'connect_to_hdfs', 'scheduled__2025-03-20T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:40,971 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'connect_to_hdfs', 'scheduled__2025-03-20T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:42,530 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='connect_to_hdfs', run_id='scheduled__2025-03-20T00:00:00+00:00', try_number=1, map_index=-1)
+2025-03-22 02:00:42,533 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=connect_to_hdfs, run_id=scheduled__2025-03-20T00:00:00+00:00, map_index=-1, run_start_date=2025-03-22 02:00:42.058565+00:00, run_end_date=2025-03-22 02:00:42.173659+00:00, run_duration=0.115094, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=3, job_id=28, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2025-03-22 02:00:40.967491+00:00, queued_by_job_id=22, pid=3882259
+2025-03-22 02:00:42,557 INFO - Marking run <DagRun fraud_detection_pipeline @ 2025-03-20 00:00:00+00:00: scheduled__2025-03-20T00:00:00+00:00, state:running, queued_at: 2025-03-22 02:00:25.324593+00:00. externally triggered: False> successful
+2025-03-22 02:00:42,557 INFO - DagRun Finished: dag_id=fraud_detection_pipeline, execution_date=2025-03-20 00:00:00+00:00, run_id=scheduled__2025-03-20T00:00:00+00:00, run_start_date=2025-03-22 02:00:34.978478+00:00, run_end_date=2025-03-22 02:00:42.557541+00:00, run_duration=7.579063, state=success, external_trigger=False, run_type=scheduled, data_interval_start=2025-03-20 00:00:00+00:00, data_interval_end=2025-03-21 00:00:00+00:00, dag_hash=25b699df499440ee3f9cdb70156336fb
+2025-03-22 02:00:42,559 INFO - DAG fraud_detection_pipeline is at (or above) max_active_runs (2 of 1), not creating any more runs
+2025-03-22 02:00:43,606 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.fetch_data scheduled__2025-03-21T00:00:00+00:00 [scheduled]>
+2025-03-22 02:00:43,606 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 02:00:43,607 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.fetch_data scheduled__2025-03-21T00:00:00+00:00 [scheduled]>
+2025-03-22 02:00:43,608 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.fetch_data scheduled__2025-03-21T00:00:00+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 02:00:43,608 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='scheduled__2025-03-21T00:00:00+00:00', try_number=2, map_index=-1) to SequentialExecutor with priority 3 and queue default
+2025-03-22 02:00:43,608 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'scheduled__2025-03-21T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:43,612 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'scheduled__2025-03-21T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:45,274 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='scheduled__2025-03-21T00:00:00+00:00', try_number=2, map_index=-1)
+2025-03-22 02:00:45,276 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=fetch_data, run_id=scheduled__2025-03-21T00:00:00+00:00, map_index=-1, run_start_date=2025-03-22 02:00:44.778817+00:00, run_end_date=2025-03-22 02:00:44.893822+00:00, run_duration=0.115005, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=2, max_tries=4, job_id=29, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2025-03-22 02:00:43.607723+00:00, queued_by_job_id=22, pid=3882292
+2025-03-22 02:00:45,312 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.load_to_hdfs scheduled__2025-03-21T00:00:00+00:00 [scheduled]>
+2025-03-22 02:00:45,312 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 02:00:45,313 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.load_to_hdfs scheduled__2025-03-21T00:00:00+00:00 [scheduled]>
+2025-03-22 02:00:45,313 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.load_to_hdfs scheduled__2025-03-21T00:00:00+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 02:00:45,314 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='load_to_hdfs', run_id='scheduled__2025-03-21T00:00:00+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 2 and queue default
+2025-03-22 02:00:45,314 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'load_to_hdfs', 'scheduled__2025-03-21T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:45,317 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'load_to_hdfs', 'scheduled__2025-03-21T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:49,621 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='load_to_hdfs', run_id='scheduled__2025-03-21T00:00:00+00:00', try_number=1, map_index=-1)
+2025-03-22 02:00:49,624 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=load_to_hdfs, run_id=scheduled__2025-03-21T00:00:00+00:00, map_index=-1, run_start_date=2025-03-22 02:00:46.465079+00:00, run_end_date=2025-03-22 02:00:49.251956+00:00, run_duration=2.786877, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=3, job_id=30, pool=default_pool, queue=default, priority_weight=2, operator=PythonOperator, queued_dttm=2025-03-22 02:00:45.313381+00:00, queued_by_job_id=22, pid=3882336
+2025-03-22 02:00:49,671 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.connect_to_hdfs scheduled__2025-03-21T00:00:00+00:00 [scheduled]>
+2025-03-22 02:00:49,671 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 02:00:49,672 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.connect_to_hdfs scheduled__2025-03-21T00:00:00+00:00 [scheduled]>
+2025-03-22 02:00:49,672 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.connect_to_hdfs scheduled__2025-03-21T00:00:00+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 02:00:49,673 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='connect_to_hdfs', run_id='scheduled__2025-03-21T00:00:00+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 1 and queue default
+2025-03-22 02:00:49,673 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'connect_to_hdfs', 'scheduled__2025-03-21T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:49,676 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'connect_to_hdfs', 'scheduled__2025-03-21T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:51,573 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='connect_to_hdfs', run_id='scheduled__2025-03-21T00:00:00+00:00', try_number=1, map_index=-1)
+2025-03-22 02:00:51,578 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=connect_to_hdfs, run_id=scheduled__2025-03-21T00:00:00+00:00, map_index=-1, run_start_date=2025-03-22 02:00:50.924154+00:00, run_end_date=2025-03-22 02:00:51.094232+00:00, run_duration=0.170078, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=3, job_id=31, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2025-03-22 02:00:49.672339+00:00, queued_by_job_id=22, pid=3882566
+2025-03-22 02:00:51,607 INFO - Marking run <DagRun fraud_detection_pipeline @ 2025-03-21 00:00:00+00:00: scheduled__2025-03-21T00:00:00+00:00, state:running, queued_at: 2025-03-22 02:00:25.324612+00:00. externally triggered: False> successful
+2025-03-22 02:00:51,607 INFO - DagRun Finished: dag_id=fraud_detection_pipeline, execution_date=2025-03-21 00:00:00+00:00, run_id=scheduled__2025-03-21T00:00:00+00:00, run_start_date=2025-03-22 02:00:43.585463+00:00, run_end_date=2025-03-22 02:00:51.607298+00:00, run_duration=8.021835, state=success, external_trigger=False, run_type=scheduled, data_interval_start=2025-03-21 00:00:00+00:00, data_interval_end=2025-03-22 00:00:00+00:00, dag_hash=25b699df499440ee3f9cdb70156336fb
+2025-03-22 02:00:51,608 INFO - DAG fraud_detection_pipeline is at (or above) max_active_runs (1 of 1), not creating any more runs
+2025-03-22 02:00:52,582 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.fetch_data manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>
+2025-03-22 02:00:52,582 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 02:00:52,583 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.fetch_data manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>
+2025-03-22 02:00:52,584 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.fetch_data manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 02:00:52,584 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='manual__2025-03-22T01:21:02.990581+00:00', try_number=3, map_index=-1) to SequentialExecutor with priority 3 and queue default
+2025-03-22 02:00:52,585 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'manual__2025-03-22T01:21:02.990581+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:52,588 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'fetch_data', 'manual__2025-03-22T01:21:02.990581+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:54,299 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='fetch_data', run_id='manual__2025-03-22T01:21:02.990581+00:00', try_number=3, map_index=-1)
+2025-03-22 02:00:54,302 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=fetch_data, run_id=manual__2025-03-22T01:21:02.990581+00:00, map_index=-1, run_start_date=2025-03-22 02:00:53.789698+00:00, run_end_date=2025-03-22 02:00:53.936716+00:00, run_duration=0.147018, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=3, max_tries=5, job_id=32, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2025-03-22 02:00:52.583677+00:00, queued_by_job_id=22, pid=3882638
+2025-03-22 02:00:54,338 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>
+2025-03-22 02:00:54,338 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 02:00:54,338 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>
+2025-03-22 02:00:54,339 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 02:00:54,340 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='load_to_hdfs', run_id='manual__2025-03-22T01:21:02.990581+00:00', try_number=4, map_index=-1) to SequentialExecutor with priority 2 and queue default
+2025-03-22 02:00:54,340 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'load_to_hdfs', 'manual__2025-03-22T01:21:02.990581+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:54,343 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'load_to_hdfs', 'manual__2025-03-22T01:21:02.990581+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:58,820 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='load_to_hdfs', run_id='manual__2025-03-22T01:21:02.990581+00:00', try_number=4, map_index=-1)
+2025-03-22 02:00:58,824 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=load_to_hdfs, run_id=manual__2025-03-22T01:21:02.990581+00:00, map_index=-1, run_start_date=2025-03-22 02:00:55.438398+00:00, run_end_date=2025-03-22 02:00:58.418762+00:00, run_duration=2.980364, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=4, max_tries=6, job_id=33, pool=default_pool, queue=default, priority_weight=2, operator=PythonOperator, queued_dttm=2025-03-22 02:00:54.339262+00:00, queued_by_job_id=22, pid=3882650
+2025-03-22 02:00:58,897 INFO - 1 tasks up for execution:
+	<TaskInstance: fraud_detection_pipeline.connect_to_hdfs manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>
+2025-03-22 02:00:58,897 INFO - DAG fraud_detection_pipeline has 0/16 running and queued tasks
+2025-03-22 02:00:58,897 INFO - Setting the following tasks to queued state:
+	<TaskInstance: fraud_detection_pipeline.connect_to_hdfs manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>
+2025-03-22 02:00:58,898 INFO - Trying to enqueue tasks: [<TaskInstance: fraud_detection_pipeline.connect_to_hdfs manual__2025-03-22T01:21:02.990581+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-03-22 02:00:58,899 INFO - Sending TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='connect_to_hdfs', run_id='manual__2025-03-22T01:21:02.990581+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 1 and queue default
+2025-03-22 02:00:58,899 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'connect_to_hdfs', 'manual__2025-03-22T01:21:02.990581+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:00:58,902 INFO - Executing command: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'connect_to_hdfs', 'manual__2025-03-22T01:21:02.990581+00:00', '--local', '--subdir', 'DAGS_FOLDER/dags.py']
+2025-03-22 02:01:00,661 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='fraud_detection_pipeline', task_id='connect_to_hdfs', run_id='manual__2025-03-22T01:21:02.990581+00:00', try_number=1, map_index=-1)
+2025-03-22 02:01:00,663 INFO - TaskInstance Finished: dag_id=fraud_detection_pipeline, task_id=connect_to_hdfs, run_id=manual__2025-03-22T01:21:02.990581+00:00, map_index=-1, run_start_date=2025-03-22 02:01:00.126611+00:00, run_end_date=2025-03-22 02:01:00.248492+00:00, run_duration=0.121881, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=3, job_id=34, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2025-03-22 02:00:58.898166+00:00, queued_by_job_id=22, pid=3882895
+2025-03-22 02:01:00,690 INFO - Marking run <DagRun fraud_detection_pipeline @ 2025-03-22 01:21:02.990581+00:00: manual__2025-03-22T01:21:02.990581+00:00, state:running, queued_at: 2025-03-22 02:00:25.324525+00:00. externally triggered: True> successful
+2025-03-22 02:01:00,691 INFO - DagRun Finished: dag_id=fraud_detection_pipeline, execution_date=2025-03-22 01:21:02.990581+00:00, run_id=manual__2025-03-22T01:21:02.990581+00:00, run_start_date=2025-03-22 02:00:52.556788+00:00, run_end_date=2025-03-22 02:01:00.691234+00:00, run_duration=8.134446, state=success, external_trigger=True, run_type=manual, data_interval_start=2025-03-21 01:21:02.990581+00:00, data_interval_end=2025-03-22 01:21:02.990581+00:00, dag_hash=25b699df499440ee3f9cdb70156336fb
+2025-03-22 02:04:00,850 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 02:09:00,885 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 02:14:00,930 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 02:19:00,974 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 02:24:01,019 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 02:29:01,058 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 02:34:01,084 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 02:50:14,640 INFO - Heartbeat recovered after 869.98 seconds
+2025-03-22 02:53:28,221 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 02:58:28,278 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 03:03:28,335 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 03:08:28,394 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 03:13:28,448 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 03:18:28,479 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 03:23:28,527 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 03:28:28,577 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 03:33:28,628 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 03:38:28,686 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 03:43:28,739 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 03:48:28,791 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 03:53:28,843 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 03:58:28,864 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 04:03:28,926 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 04:08:28,976 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 04:13:29,026 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 04:18:29,077 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 04:23:29,167 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 04:28:29,218 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 04:33:29,269 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 04:38:29,318 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 04:43:29,367 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 04:57:44,748 INFO - Heartbeat recovered after 794.17 seconds
+2025-03-22 05:01:38,628 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 05:06:38,680 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 05:11:38,703 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-03-22 05:16:38,756 INFO - Adopting or resetting orphaned tasks for active dag runs
