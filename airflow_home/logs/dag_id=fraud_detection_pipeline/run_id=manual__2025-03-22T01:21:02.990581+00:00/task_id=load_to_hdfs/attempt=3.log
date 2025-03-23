@@ -1,0 +1,23 @@
+[2025-03-22T01:41:38.147+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-22T01:41:38.154+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:21:02.990581+00:00 [queued]>
+[2025-03-22T01:41:38.158+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:21:02.990581+00:00 [queued]>
+[2025-03-22T01:41:38.158+0000] {taskinstance.py:2867} INFO - Starting attempt 3 of 4
+[2025-03-22T01:41:38.165+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): load_to_hdfs> on 2025-03-22 01:21:02.990581+00:00
+[2025-03-22T01:41:38.168+0000] {standard_task_runner.py:72} INFO - Started process 3866034 to run task
+[2025-03-22T01:41:38.169+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'load_to_hdfs', 'manual__2025-03-22T01:21:02.990581+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/dags.py', '--cfg-path', '/tmp/tmpitbl5yzy']
+[2025-03-22T01:41:38.170+0000] {standard_task_runner.py:105} INFO - Job 14: Subtask load_to_hdfs
+[2025-03-22T01:41:38.188+0000] {task_command.py:467} INFO - Running <TaskInstance: fraud_detection_pipeline.load_to_hdfs manual__2025-03-22T01:21:02.990581+00:00 [running]> on host usmail-ThinkBook-14-G2-ITL
+[2025-03-22T01:41:38.226+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='fraud_detection_pipeline' AIRFLOW_CTX_TASK_ID='load_to_hdfs' AIRFLOW_CTX_EXECUTION_DATE='2025-03-22T01:21:02.990581+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-22T01:21:02.990581+00:00'
+[2025-03-22T01:41:38.227+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-22T01:41:40.255+0000] {logging_mixin.py:190} WARNING - creating folder in HDFS
+[2025-03-22T01:41:40.255+0000] {dags.py:73} INFO - creating folder in HDFS
+[2025-03-22T01:41:40.260+0000] {logging_mixin.py:190} WARNING - Copying data to data into /hadoop_namenode mounted volume
+[2025-03-22T01:41:40.259+0000] {dags.py:76} INFO - Copying data to data into /hadoop_namenode mounted volume
+[2025-03-22T01:41:41.742+0000] {logging_mixin.py:190} WARNING - Data loaded to HDFS
+[2025-03-22T01:41:41.742+0000] {dags.py:79} INFO - Data loaded to HDFS
+[2025-03-22T01:41:41.743+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-03-22T01:41:41.748+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-22T01:41:41.749+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=fraud_detection_pipeline, task_id=load_to_hdfs, run_id=manual__2025-03-22T01:21:02.990581+00:00, execution_date=20250322T012102, start_date=20250322T014138, end_date=20250322T014141
+[2025-03-22T01:41:41.794+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-22T01:41:41.801+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-22T01:41:41.801+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

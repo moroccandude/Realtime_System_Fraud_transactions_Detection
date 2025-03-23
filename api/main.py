@@ -4,8 +4,9 @@ from fastapi import FastAPI,HTTPException
 import uvicorn
 import logging
 from pydantic import BaseModel
+import os 
 
-logging.basicConfig(level=logging.INFO,filemode="w",filename="logs.txt",format='%%((message)s%% : %%(name)s%%')
+logging.basicConfig(level=logging.INFO,filemode="w",filename="logs.txt",format='%%((message)s%% : %%(name)s%%',datefmt='%m/%d/%Y %I:%M:%S %p')
 app = FastAPI()
 
 class Item(BaseModel):
@@ -37,18 +38,35 @@ def read_item(item_id: int,item:Item):
 
 @app.get("/api/v1/customer")
 def get_customers():
-    with open("../data/customers.json","r") as file:
-      return json.load(file)
+  try:
+
+    os.chdir("/home/usmail/sys_fraud/sys_detection_frauds/system_fraud_transactions_detection/data")
+    with open("customers.json","r") as file:
+     return json.load(file)
+    
+  except Exception as exec:
+     print(os.getcwd())
+  
 
 @app.get("/api/v1/transactions")
 def get_transactions():
-    with open("../data/transactions.json","r") as file:
-      return json.load(file)    
+   try:
+    os.chdir("/home/usmail/sys_fraud/sys_detection_frauds/system_fraud_transactions_detection/data")
+
+    with open("transactions.json","r") as file:
+      return json.load(file) 
+   except FileNotFoundError as exec:
+      logging.error(exec)    
 
 @app.get("/api/v1/externaldata")
-def get_transactions():
-    with open("../data/external_data.json","r") as file:
+def externaldata():
+  try:
+    os.chdir("/home/usmail/sys_fraud/sys_detection_frauds/system_fraud_transactions_detection/data")
+
+    with open("external_data.json","r") as file:
       return json.load(file)    
+  except FileNotFoundError as exec:
+      logging.error(exec)    
       
 if __name__=="__main__":
    uvicorn.run(app, host="127.0.0.1", port=8000)

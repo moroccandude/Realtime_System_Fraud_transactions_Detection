@@ -1,0 +1,113 @@
+[2025-03-22T20:59:00.232+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-22T20:59:00.239+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fraud_detection_pipeline.load_data_to_hive manual__2025-03-22T19:27:34.383701+00:00 [queued]>
+[2025-03-22T20:59:00.245+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fraud_detection_pipeline.load_data_to_hive manual__2025-03-22T19:27:34.383701+00:00 [queued]>
+[2025-03-22T20:59:00.246+0000] {taskinstance.py:2867} INFO - Starting attempt 2 of 4
+[2025-03-22T20:59:00.255+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): load_data_to_hive> on 2025-03-22 19:27:34.383701+00:00
+[2025-03-22T20:59:00.261+0000] {standard_task_runner.py:72} INFO - Started process 272936 to run task
+[2025-03-22T20:59:00.264+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'load_data_to_hive', 'manual__2025-03-22T19:27:34.383701+00:00', '--job-id', '81', '--raw', '--subdir', 'DAGS_FOLDER/dags.py', '--cfg-path', '/tmp/tmpjh2zkpp8']
+[2025-03-22T20:59:00.265+0000] {standard_task_runner.py:105} INFO - Job 81: Subtask load_data_to_hive
+[2025-03-22T20:59:00.286+0000] {task_command.py:467} INFO - Running <TaskInstance: fraud_detection_pipeline.load_data_to_hive manual__2025-03-22T19:27:34.383701+00:00 [running]> on host usmail-ThinkBook-14-G2-ITL
+[2025-03-22T20:59:00.325+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='fraud_detection_pipeline' AIRFLOW_CTX_TASK_ID='load_data_to_hive' AIRFLOW_CTX_EXECUTION_DATE='2025-03-22T19:27:34.383701+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-22T19:27:34.383701+00:00'
+[2025-03-22T20:59:00.326+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-22T20:59:00.346+0000] {hive.py:475} INFO - USE `default`
+[2025-03-22T20:59:00.386+0000] {hive.py:475} INFO - INSERT INTO customers (customers STRING,account_history array<string>,age int,location string,avg_transaction_value string ) VALUES C000,['T00147', 'T00297', 'T00299', 'T00321', 'T00375', 'T00436', 'T00495', 'T00700', 'T00860', 'T00900'],None,None,None
+[2025-03-22T20:59:00.390+0000] {dags.py:268} ERROR - Error loading data to Hive: TExecuteStatementResp(status=TStatus(statusCode=3, infoMessages=['Server-side error; please check HS2 logs.'], sqlState='42000', errorCode=40000, errorMessage="Error while compiling statement: FAILED: ParseException line 1:33 mismatched input 'STRING' expecting ) near 'customers' in insert clause"), operationHandle=None)
+[2025-03-22T20:59:00.391+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 763, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/system_fraud_transactions_detection/airflow_home/dags/dags.py", line 243, in load_data_to_hive
+    insert_data=cursor.execute(f"INSERT INTO customers (customers STRING,account_history array<string>,age int,location string,avg_transaction_value string ) VALUES {customer.get('customer_id')},{customer.get('account_history')},{customer.get('age')},{customer.get('location')},{customer.get('avg_transaction_value')}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/pyhive/hive.py", line 481, in execute
+    _check_status(response)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/pyhive/hive.py", line 611, in _check_status
+    raise OperationalError(response)
+pyhive.exc.OperationalError: TExecuteStatementResp(status=TStatus(statusCode=3, infoMessages=['Server-side error; please check HS2 logs.'], sqlState='42000', errorCode=40000, errorMessage="Error while compiling statement: FAILED: ParseException line 1:33 mismatched input 'STRING' expecting ) near 'customers' in insert clause"), operationHandle=None)
+[2025-03-22T20:59:00.400+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=fraud_detection_pipeline, task_id=load_data_to_hive, run_id=manual__2025-03-22T19:27:34.383701+00:00, execution_date=20250322T192734, start_date=20250322T205900, end_date=20250322T205900
+[2025-03-22T20:59:00.416+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-22T20:59:00.416+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 81 for task load_data_to_hive (TExecuteStatementResp(status=TStatus(statusCode=3, infoMessages=['Server-side error; please check HS2 logs.'], sqlState='42000', errorCode=40000, errorMessage="Error while compiling statement: FAILED: ParseException line 1:33 mismatched input 'STRING' expecting ) near 'customers' in insert clause"), operationHandle=None); 272936)
+Traceback (most recent call last):
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 763, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/system_fraud_transactions_detection/airflow_home/dags/dags.py", line 243, in load_data_to_hive
+    insert_data=cursor.execute(f"INSERT INTO customers (customers STRING,account_history array<string>,age int,location string,avg_transaction_value string ) VALUES {customer.get('customer_id')},{customer.get('account_history')},{customer.get('age')},{customer.get('location')},{customer.get('avg_transaction_value')}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/pyhive/hive.py", line 481, in execute
+    _check_status(response)
+  File "/home/usmail/sys_fraud/sys_detection_frauds/lib/python3.12/site-packages/pyhive/hive.py", line 611, in _check_status
+    raise OperationalError(response)
+pyhive.exc.OperationalError: TExecuteStatementResp(status=TStatus(statusCode=3, infoMessages=['Server-side error; please check HS2 logs.'], sqlState='42000', errorCode=40000, errorMessage="Error while compiling statement: FAILED: ParseException line 1:33 mismatched input 'STRING' expecting ) near 'customers' in insert clause"), operationHandle=None)
+[2025-03-22T20:59:00.436+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-03-22T20:59:00.448+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-22T20:59:00.449+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
