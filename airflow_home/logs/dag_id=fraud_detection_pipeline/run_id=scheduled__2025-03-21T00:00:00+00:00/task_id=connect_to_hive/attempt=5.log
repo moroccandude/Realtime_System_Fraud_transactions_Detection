@@ -1,0 +1,20 @@
+[2025-03-22T17:27:33.572+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-22T17:27:33.582+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fraud_detection_pipeline.connect_to_hive scheduled__2025-03-21T00:00:00+00:00 [queued]>
+[2025-03-22T17:27:33.586+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fraud_detection_pipeline.connect_to_hive scheduled__2025-03-21T00:00:00+00:00 [queued]>
+[2025-03-22T17:27:33.587+0000] {taskinstance.py:2867} INFO - Starting attempt 5 of 8
+[2025-03-22T17:27:33.595+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): connect_to_hive> on 2025-03-21 00:00:00+00:00
+[2025-03-22T17:27:33.600+0000] {standard_task_runner.py:72} INFO - Started process 150422 to run task
+[2025-03-22T17:27:33.602+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'connect_to_hive', 'scheduled__2025-03-21T00:00:00+00:00', '--job-id', '32', '--raw', '--subdir', 'DAGS_FOLDER/dags.py', '--cfg-path', '/tmp/tmp1q0hrv2m']
+[2025-03-22T17:27:33.603+0000] {standard_task_runner.py:105} INFO - Job 32: Subtask connect_to_hive
+[2025-03-22T17:27:33.624+0000] {task_command.py:467} INFO - Running <TaskInstance: fraud_detection_pipeline.connect_to_hive scheduled__2025-03-21T00:00:00+00:00 [running]> on host usmail-ThinkBook-14-G2-ITL
+[2025-03-22T17:27:33.659+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='fraud_detection_pipeline' AIRFLOW_CTX_TASK_ID='connect_to_hive' AIRFLOW_CTX_EXECUTION_DATE='2025-03-21T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='5' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-21T00:00:00+00:00'
+[2025-03-22T17:27:33.660+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-22T17:27:33.677+0000] {logging_mixin.py:190} INFO - Connection params: {'host': 'localhost', 'port': '10000', 'username': 'hive', 'database': 'default', 'password': 'password', 'auth': 'CUSTOM'}
+[2025-03-22T17:27:33.684+0000] {hive.py:475} INFO - USE `default`
+[2025-03-22T17:27:33.704+0000] {dags.py:155} INFO - Hive connection parameters verified and shared
+[2025-03-22T17:27:33.704+0000] {python.py:240} INFO - Done. Returned value was: {'host': 'localhost', 'port': '10000', 'username': 'hive', 'database': 'default', 'password': '***', 'auth': 'CUSTOM'}
+[2025-03-22T17:27:33.711+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-22T17:27:33.711+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=fraud_detection_pipeline, task_id=connect_to_hive, run_id=scheduled__2025-03-21T00:00:00+00:00, execution_date=20250321T000000, start_date=20250322T172733, end_date=20250322T172733
+[2025-03-22T17:27:33.734+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-22T17:27:33.742+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-03-22T17:27:33.745+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

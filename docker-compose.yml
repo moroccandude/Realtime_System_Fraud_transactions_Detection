@@ -1,6 +1,119 @@
 version: '3.9'
 
 services:
+  # airflow-webserver:
+  #   build:
+  #     context: ./airflow
+  #     dockerfile: Dockerfile
+  #   restart: unless-stopped
+  #   container_name: airflow-webserver
+  #   hostname: airflow-webserver
+  #   depends_on:
+  #     - airflow-scheduler
+  #     - airflow-init
+  #     - postgres-airflow
+  #   environment:
+  #     - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+  #     - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres-airflow:5432/airflow
+  #     - AIRFLOW__CORE__LOAD_EXAMPLES=false
+  #     - AIRFLOW__CORE__FERNET_KEY=46BKJoQYlPPOexq0OhDZnIlNepKFf87WFwLbfzqDDho=
+  #     - AIRFLOW__WEBSERVER__SECRET_KEY=secretkey
+  #     - AIRFLOW_VAR_api_base_url=http://api-service:8000/api/v1
+  #     - AIRFLOW_VAR_hdfs_conn_id=hdfs_default
+  #     - AIRFLOW_VAR_local_data_path=/opt/airflow/data
+  #     - AIRFLOW_VAR_hdfs_warehouse_dir=/opt/hive/warehouse
+  #     - AIRFLOW_VAR_hive_conn_id=hive_default
+  #     - AIRFLOW_VAR_hive_table_name=fraud_transactions
+  #   ports:
+  #     - "8080:8080"
+  #   volumes:
+  #     - ./dags:/opt/airflow/dags
+  #     - ./logs:/opt/airflow/logs
+  #     - ./plugins:/opt/airflow/plugins
+  #     - ./data:/opt/airflow/data
+  #   networks:
+  #     - data_network
+  #   command: webserver
+
+  # airflow-scheduler:
+  #   build:
+  #     context: ./airflow
+  #     dockerfile: Dockerfile
+  #   restart: unless-stopped
+  #   container_name: airflow-scheduler
+  #   hostname: airflow-scheduler
+  #   depends_on:
+  #     - postgres-airflow
+  #   environment:
+  #     - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+  #     - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres-airflow:5432/airflow
+  #     - AIRFLOW__CORE__LOAD_EXAMPLES=false
+  #     - AIRFLOW__CORE__FERNET_KEY=46BKJoQYlPPOexq0OhDZnIlNepKFf87WFwLbfzqDDho=
+  #     - AIRFLOW_VAR_api_base_url=http://api-service:8000/api/v1
+  #     - AIRFLOW_VAR_hdfs_conn_id=hdfs_default
+  #     - AIRFLOW_VAR_local_data_path=/opt/airflow/data
+  #     - AIRFLOW_VAR_hdfs_warehouse_dir=/opt/hive/warehouse
+  #     - AIRFLOW_VAR_hive_conn_id=hive_default
+  #     - AIRFLOW_VAR_hive_table_name=fraud_transactions
+  #   volumes:
+  #     - ./dags:/opt/airflow/dags
+  #     - ./logs:/opt/airflow/logs
+  #     - ./plugins:/opt/airflow/plugins
+  #     - ./data:/opt/airflow/data
+  #   networks:
+  #     - data_network
+  #   command: scheduler
+
+  # # Airflow database
+  # postgres-airflow:
+  #   image: postgres:13
+  #   restart: unless-stopped
+  #   container_name: postgres-airflow
+  #   hostname: postgres-airflow
+  #   environment:
+  #     POSTGRES_DB: airflow
+  #     POSTGRES_USER: airflow
+  #     POSTGRES_PASSWORD: airflow
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U airflow -d airflow"]
+  #     interval: 5s
+  #     timeout: 5s
+  #     retries: 5
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - postgres_airflow_data:/var/lib/postgresql/data
+  #   networks:
+  #     - data_network
+
+  # # Airflow initialization
+  # airflow-init:
+  #   build:
+  #     context: ./airflow
+  #     dockerfile: Dockerfile
+  #   container_name: airflow-init
+  #   hostname: airflow-init
+  #   depends_on:
+  #     postgres-airflow:
+  #       condition: service_healthy
+  #   environment:
+  #     - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+  #     - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres-airflow:5432/airflow
+  #     - AIRFLOW__CORE__LOAD_EXAMPLES=false
+  #     - AIRFLOW__CORE__FERNET_KEY=46BKJoQYlPPOexq0OhDZnIlNepKFf87WFwLbfzqDDho=
+  #     - _AIRFLOW_DB_UPGRADE=true
+  #     - _AIRFLOW_WWW_USER_CREATE=true
+  #     - _AIRFLOW_WWW_USER_USERNAME=admin
+  #     - _AIRFLOW_WWW_USER_PASSWORD=admin
+  #   volumes:
+  #     - ./dags:/opt/airflow/dags
+  #     - ./logs:/opt/airflow/logs
+  #     - ./plugins:/opt/airflow/plugins
+  #   networks:
+  #     - data_network
+  #   entrypoint: /bin/bash
+  #   command: -c "airflow db init && airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com && airflow connections add 'hdfs_default' --conn-type 'hdfs' --conn-host 'namenode' --conn-port '9001' && airflow connections add 'hive_default' --conn-type 'hive_cli' --conn-host 'hiveserver2' --conn-port '10000' --conn-schema 'default' --conn-login 'hive'"
+ 
   hiveserver2:
    image: apache/hive:4.0.1
    depends_on:
@@ -108,162 +221,7 @@ services:
     networks:
       - data_network
 
-  # PostgreSQL for Airflow (serves as both metadata DB and results backend)
-  postgres_airflow:
-    image: postgres:13
-    container_name: postgres_airflow
-    environment:
-      - POSTGRES_USER=airflow
-      - POSTGRES_PASSWORD=airflow
-      - POSTGRES_DB=airflow
-    ports:
-      - "5439:5432"
-    volumes:
-      - ./airflow/postgres_airflow_data:/var/lib/postgresql/data
-    networks:
-      - data_network
-    healthcheck:
-      test: ["CMD", "pg_isready", "-U", "airflow"]
-      interval: 5s
-      retries: 5
-
-  airflow-init:
-    image: apache/airflow:2.7.1
-    container_name: airflow-init
-    depends_on:
-      postgres_airflow:
-        condition: service_healthy
-    entrypoint: /bin/bash
-    volumes:
-      - ./airflow/dags:/opt/airflow/dags
-      - ./airflow/logs:/opt/airflow/logs
-      - ./airflow/plugins:/opt/airflow/plugins
-      - ./airflow/airflow_files:/opt/airflow/files
-    command: >
-      -c "
-      mkdir -p /opt/airflow/logs /opt/airflow/dags /opt/airflow/plugins /opt/airflow/files;
-      chown -R 50000:0 /opt/airflow/logs /opt/airflow/dags /opt/airflow/plugins /opt/airflow/files;
-      airflow db init;
-      airflow users create --username airflow --password airflow --firstname Admin --lastname User --role Admin --email admin@example.com;
-      "
-    environment:
-      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
-      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres_airflow/airflow
-      - AIRFLOW__CORE__FERNET_KEY=''
-      - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=true
-      - AIRFLOW__CORE__LOAD_EXAMPLES=false
-    networks:
-      - data_network
-
-  airflow-webserver:
-    image: apache/airflow:2.7.1
-    container_name: airflow_webserver
-    restart: unless-stopped
-    depends_on:
-      - airflow-init
-    environment:
-      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
-      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres_airflow/airflow
-      - AIRFLOW__CORE__FERNET_KEY=''
-      - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=true
-      - AIRFLOW__CORE__LOAD_EXAMPLES=false
-    volumes:
-      - ./airflow/dags:/opt/airflow/dags
-      - ./airflow/logs:/opt/airflow/logs
-      - ./airflow/plugins:/opt/airflow/plugins
-      - ./airflow/airflow_files:/opt/airflow/files
-    ports:
-      - "8080:8080"
-    command: airflow webserver
-    networks:
-      - data_network
-
-  airflow-scheduler:
-    image: apache/airflow:2.7.1
-    container_name: airflow-scheduler
-    restart: unless-stopped
-    depends_on:
-      - airflow-init
-    environment:
-      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
-      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres_airflow/airflow
-      - AIRFLOW__CORE__FERNET_KEY=''
-      - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=true
-      - AIRFLOW__CORE__LOAD_EXAMPLES=false
-    volumes:
-      - ./airflow/dags:/opt/airflow/dags
-      - ./airflow/logs:/opt/airflow/logs
-      - ./airflow/plugins:/opt/airflow/plugins
-      - ./airflow/airflow_files:/opt/airflow/files
-    command: airflow scheduler
-    networks:
-      - data_network
-
-  zookeeper:
-      image: wurstmeister/zookeeper
-      container_name: zookeeper
-      restart: always
-      ports:
-        - "2181:2181"
-      environment:
-        ZOOKEEPER_CLIENT_PORT: 2181
-      networks:
-        - data_network
-  kafka:
-      image: wurstmeister/kafka:latest
-      container_name: kafka
-      depends_on:
-        - zookeeper
-      restart: always
-      environment:
-        KAFKA_BROKER_ID: 1
-        KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
-        KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
-        KAFKA_LISTENERS: INTERNAL://0.0.0.0:9094,EXTERNAL://0.0.0.0:29092
-        KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:9094,EXTERNAL://localhost:29092
-        KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
-        KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
-        KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
-      ports:
-        - "9094:9092"
-        - "29092:29092"
-      networks:
-         - data_network
-      entrypoint:
-        - sh
-        - -c
-        - |
-          # Wait for Zookeeper to be ready
-          echo "Waiting for Zookeeper..."
-          while ! nc -z zookeeper 2181; do
-            sleep 1
-          done
-
-          # Start Kafka in the background
-          echo "Starting Kafka..."
-          /opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties &
-
-          # Wait for Kafka to be ready
-          echo "Waiting for Kafka..."
-          while ! nc -z localhost 9092; do
-            sleep 1
-          done
-
-          # Extra safety delay
-          sleep 5
-
-          # Create the "transactions" topic
-
-          echo "Creating topic..."
-          /opt/kafka/bin/kafka-topics.sh --create \
-            --topic transactions \
-            --partitions 1 \
-            --replication-factor 1 \
-            --bootstrap-server localhost:9092
-
-          # Keep the container alive
-          tail -f /dev/null   
-    
+ 
 volumes:
   hive-db:
   warehouse:

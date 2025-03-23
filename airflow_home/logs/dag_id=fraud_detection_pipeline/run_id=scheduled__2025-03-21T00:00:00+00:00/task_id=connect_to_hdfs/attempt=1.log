@@ -1,0 +1,40 @@
+[2025-03-22T02:00:50.910+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-22T02:00:50.923+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fraud_detection_pipeline.connect_to_hdfs scheduled__2025-03-21T00:00:00+00:00 [queued]>
+[2025-03-22T02:00:50.929+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fraud_detection_pipeline.connect_to_hdfs scheduled__2025-03-21T00:00:00+00:00 [queued]>
+[2025-03-22T02:00:50.930+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 4
+[2025-03-22T02:00:50.940+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): connect_to_hdfs> on 2025-03-21 00:00:00+00:00
+[2025-03-22T02:00:50.943+0000] {standard_task_runner.py:72} INFO - Started process 3882566 to run task
+[2025-03-22T02:00:50.945+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'connect_to_hdfs', 'scheduled__2025-03-21T00:00:00+00:00', '--job-id', '31', '--raw', '--subdir', 'DAGS_FOLDER/dags.py', '--cfg-path', '/tmp/tmpaq8dp_x6']
+[2025-03-22T02:00:50.947+0000] {standard_task_runner.py:105} INFO - Job 31: Subtask connect_to_hdfs
+[2025-03-22T02:00:50.967+0000] {task_command.py:467} INFO - Running <TaskInstance: fraud_detection_pipeline.connect_to_hdfs scheduled__2025-03-21T00:00:00+00:00 [running]> on host usmail-ThinkBook-14-G2-ITL
+[2025-03-22T02:00:51.022+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='fraud_detection_pipeline' AIRFLOW_CTX_TASK_ID='connect_to_hdfs' AIRFLOW_CTX_EXECUTION_DATE='2025-03-21T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-21T00:00:00+00:00'
+[2025-03-22T02:00:51.023+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-22T02:00:51.060+0000] {hive.py:475} INFO - USE `None`
+[2025-03-22T02:00:51.073+0000] {logging_mixin.py:190} WARNING - Error connecting to Hive: TExecuteStatementResp(status=TStatus(statusCode=3, infoMessages=['Server-side error; please check HS2 logs.'], sqlState='42000', errorCode=10072, errorMessage='Error while compiling statement: FAILED: SemanticException [Error 10072]: Database does not exist: None'), operationHandle=None)
+[2025-03-22T02:00:51.073+0000] {dags.py:107} ERROR - Error connecting to Hive: TExecuteStatementResp(status=TStatus(statusCode=3, infoMessages=['Server-side error; please check HS2 logs.'], sqlState='42000', errorCode=10072, errorMessage='Error while compiling statement: FAILED: SemanticException [Error 10072]: Database does not exist: None'), operationHandle=None)
+[2025-03-22T02:00:51.074+0000] {python.py:240} INFO - Done. Returned value was: (None, None)
+[2025-03-22T02:00:51.093+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-22T02:00:51.094+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=fraud_detection_pipeline, task_id=connect_to_hdfs, run_id=scheduled__2025-03-21T00:00:00+00:00, execution_date=20250321T000000, start_date=20250322T020050, end_date=20250322T020051
+[2025-03-22T02:00:51.119+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-22T02:00:51.126+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-22T02:00:51.126+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-03-22T16:12:40.150+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-22T16:12:40.158+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fraud_detection_pipeline.connect_to_hdfs scheduled__2025-03-21T00:00:00+00:00 [queued]>
+[2025-03-22T16:12:40.161+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fraud_detection_pipeline.connect_to_hdfs scheduled__2025-03-21T00:00:00+00:00 [queued]>
+[2025-03-22T16:12:40.162+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 4
+[2025-03-22T16:12:40.172+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): connect_to_hdfs> on 2025-03-21 00:00:00+00:00
+[2025-03-22T16:12:40.175+0000] {standard_task_runner.py:72} INFO - Started process 97823 to run task
+[2025-03-22T16:12:40.177+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'fraud_detection_pipeline', 'connect_to_hdfs', 'scheduled__2025-03-21T00:00:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/dags.py', '--cfg-path', '/tmp/tmpsuf9x5w3']
+[2025-03-22T16:12:40.178+0000] {standard_task_runner.py:105} INFO - Job 13: Subtask connect_to_hdfs
+[2025-03-22T16:12:40.197+0000] {task_command.py:467} INFO - Running <TaskInstance: fraud_detection_pipeline.connect_to_hdfs scheduled__2025-03-21T00:00:00+00:00 [running]> on host usmail-ThinkBook-14-G2-ITL
+[2025-03-22T16:12:40.233+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='fraud_detection_pipeline' AIRFLOW_CTX_TASK_ID='connect_to_hdfs' AIRFLOW_CTX_EXECUTION_DATE='2025-03-21T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-21T00:00:00+00:00'
+[2025-03-22T16:12:40.234+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-22T16:12:40.519+0000] {hive.py:475} INFO - USE `None`
+[2025-03-22T16:12:41.686+0000] {logging_mixin.py:190} WARNING - Error connecting to Hive: TExecuteStatementResp(status=TStatus(statusCode=3, infoMessages=['Server-side error; please check HS2 logs.'], sqlState='42000', errorCode=10072, errorMessage='Error while compiling statement: FAILED: SemanticException [Error 10072]: Database does not exist: None'), operationHandle=None)
+[2025-03-22T16:12:41.686+0000] {dags.py:110} ERROR - Error connecting to Hive: TExecuteStatementResp(status=TStatus(statusCode=3, infoMessages=['Server-side error; please check HS2 logs.'], sqlState='42000', errorCode=10072, errorMessage='Error while compiling statement: FAILED: SemanticException [Error 10072]: Database does not exist: None'), operationHandle=None)
+[2025-03-22T16:12:41.686+0000] {python.py:240} INFO - Done. Returned value was: (None, None)
+[2025-03-22T16:12:41.699+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-22T16:12:41.699+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=fraud_detection_pipeline, task_id=connect_to_hdfs, run_id=scheduled__2025-03-21T00:00:00+00:00, execution_date=20250321T000000, start_date=20250322T161240, end_date=20250322T161241
+[2025-03-22T16:12:41.753+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-22T16:12:41.769+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-22T16:12:41.770+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
