@@ -1,0 +1,33 @@
+name: ETL Pipeline CI/CD
+
+on:
+  push:
+    branches:
+      - test  # Runs the pipeline when code is pushed to 'main'
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:  # Allows manual execution
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4  # Fetches your code
+
+      - name: Set up Docker
+        run: |
+          docker --version
+          docker-compose --version
+
+      - name: Start Services with Docker Compose
+        run: docker-compose up -d  # Runs Hive, API fetcher, and other services
+
+      - name: Verify Hive Data
+        run: |
+          docker exec -it hive-server beeline -u "jdbc:hive2://localhost:10000" -e "SHOW TABLES;"
+
+      - name: Stop Docker Containers
+        run: docker-compose down
