@@ -203,7 +203,7 @@ def create_tables(**context):
         cursor.execute(create_table_external_data)
 
         conn.commit()
-        hchgscgs
+       
         # Always close connections
         cursor.close()
         conn.close()

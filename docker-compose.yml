@@ -1,160 +1,128 @@
 version: '3.9'
 
 services:
-  # airflow-webserver:
-  #   build:
-  #     context: ./airflow
-  #     dockerfile: Dockerfile
-  #   restart: unless-stopped
-  #   container_name: airflow-webserver
-  #   hostname: airflow-webserver
-  #   depends_on:
-  #     - airflow-scheduler
-  #     - airflow-init
-  #     - postgres-airflow
-  #   environment:
-  #     - AIRFLOW__CORE__EXECUTOR=LocalExecutor
-  #     - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres-airflow:5432/airflow
-  #     - AIRFLOW__CORE__LOAD_EXAMPLES=false
-  #     - AIRFLOW__CORE__FERNET_KEY=46BKJoQYlPPOexq0OhDZnIlNepKFf87WFwLbfzqDDho=
-  #     - AIRFLOW__WEBSERVER__SECRET_KEY=secretkey
-  #     - AIRFLOW_VAR_api_base_url=http://api-service:8000/api/v1
-  #     - AIRFLOW_VAR_hdfs_conn_id=hdfs_default
-  #     - AIRFLOW_VAR_local_data_path=/opt/airflow/data
-  #     - AIRFLOW_VAR_hdfs_warehouse_dir=/opt/hive/warehouse
-  #     - AIRFLOW_VAR_hive_conn_id=hive_default
-  #     - AIRFLOW_VAR_hive_table_name=fraud_transactions
-  #   ports:
-  #     - "8080:8080"
-  #   volumes:
-  #     - ./dags:/opt/airflow/dags
-  #     - ./logs:/opt/airflow/logs
-  #     - ./plugins:/opt/airflow/plugins
-  #     - ./data:/opt/airflow/data
-  #   networks:
-  #     - data_network
-  #   command: webserver
+  airflow-webserver:
+    image: apache/airflow
+    user: "0:0"
+    depends_on:
+      postgres-airflow:
+        condition: service_healthy
+      namenode:
+        condition: service_started
+      hiveserver2:
+        condition: service_started
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./airflow_home/dags:/opt/airflow/dags
+      - ./airflow_home/logs:/opt/airflow/logs
+      - ./airflow_home/plugins:/opt/airflow/plugins
+      - ./airflow_home/data:/opt/airflow/data
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres-airflow:5432/airflow
+      - AIRFLOW__CORE__LOAD_EXAMPLES=false
+    command: webserver
+    restart: unless-stopped
+    networks:
+      - data_network
 
-  # airflow-scheduler:
-  #   build:
-  #     context: ./airflow
-  #     dockerfile: Dockerfile
-  #   restart: unless-stopped
-  #   container_name: airflow-scheduler
-  #   hostname: airflow-scheduler
-  #   depends_on:
-  #     - postgres-airflow
-  #   environment:
+  airflow-scheduler:
+    image: apache/airflow
+    user: "0:0"
+    depends_on:
+      postgres-airflow:
+        condition: service_healthy
+    volumes:
+      - ./airflow_home/dags:/opt/airflow/dags
+      - ./airflow_home/logs:/opt/airflow/logs
+      - ./airflow_home/plugins:/opt/airflow/plugins
+      - ./airflow_home/data:/opt/airflow/data
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres-airflow:5432/airflow
+    command: scheduler
+    restart: unless-stopped
+    networks:
+      - data_network
 
-  #     - AIRFLOW__CORE__EXECUTOR=LocalExecutor
-  #     - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres-airflow:5432/airflow
-  #     - AIRFLOW__CORE__LOAD_EXAMPLES=false
-  #     - AIRFLOW__CORE__FERNET_KEY=46BKJoQYlPPOexq0OhDZnIlNepKFf87WFwLbfzqDDho=
-  #     - AIRFLOW_VAR_api_base_url=http://api-service:8000/api/v1
-  #     - AIRFLOW_VAR_hdfs_conn_id=hdfs_default
-  #     - AIRFLOW_VAR_local_data_path=/opt/airflow/data
-  #     - AIRFLOW_VAR_hdfs_warehouse_dir=/opt/hive/warehouse
-  #     - AIRFLOW_VAR_hive_conn_id=hive_default
-  #     - AIRFLOW_VAR_hive_table_name=fraud_transactions
-  #   volumes:
-  #     - ./dags:/opt/airflow/dags
-  #     - ./logs:/opt/airflow/logs
-  #     - ./plugins:/opt/airflow/plugins
-  #     - ./data:/opt/airflow/data
-  #   networks:
-  #     - data_network
-  #   command: scheduler
+  postgres-airflow:
+    image: postgres:13
+    restart: unless-stopped
+    container_name: postgres-airflow
+    environment:
+      POSTGRES_DB: airflow
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U airflow -d airflow"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    ports:
+      - "5433:5432"  # Changed host port to 5433 to avoid conflict
+    volumes:
+      - postgres_airflow_data:/var/lib/postgresql/data
+    networks:
+      - data_network
 
-  # # Airflow database
-  # postgres-airflow:
-  #   image: postgres:13
-  #   restart: unless-stopped
-  #   container_name: postgres-airflow
-  #   hostname: postgres-airflow
-  #   environment:
-  #     POSTGRES_DB: airflow
-  #     POSTGRES_USER: airflow
-  #     POSTGRES_PASSWORD: airflow
-  #   healthcheck:
-  #     test: ["CMD-SHELL", "pg_isready -U airflow -d airflow"]
-  #     interval: 5s
-  #     timeout: 5s
-  #     retries: 5
-  #   ports:
-  #     - "5432:5432"
-  #   volumes:
-  #     - postgres_airflow_data:/var/lib/postgresql/data
-  #   networks:
-  #     - data_network
+  airflow-init:
+    image: apache/airflow
+    user: "0:0"
+    depends_on:
+      postgres-airflow:
+        condition: service_healthy
 
-  # # Airflow initialization
-  # airflow-init:
-  #   build:
-  #     context: ./airflow
-  #     dockerfile: Dockerfile
-  #   container_name: airflow-init
-  #   hostname: airflow-init
-  #   depends_on:
-  #     postgres-airflow:
-  #       condition: service_healthy
-  #   environment:
-  #     - AIRFLOW__CORE__EXECUTOR=LocalExecutor
-  #     - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres-airflow:5432/airflow
-  #     - AIRFLOW__CORE__LOAD_EXAMPLES=false
-  #     - AIRFLOW__CORE__FERNET_KEY=46BKJoQYlPPOexq0OhDZnIlNepKFf87WFwLbfzqDDho=
-  #     - _AIRFLOW_DB_UPGRADE=true
-  #     - _AIRFLOW_WWW_USER_CREATE=true
-  #     - _AIRFLOW_WWW_USER_USERNAME=admin
-  #     - _AIRFLOW_WWW_USER_PASSWORD=admin
-  #   volumes:
-  #     - ./dags:/opt/airflow/dags
-  #     - ./logs:/opt/airflow/logs
-  #     - ./plugins:/opt/airflow/plugins
-  #   networks:
-  #     - data_network
-  #   entrypoint: /bin/bash
-  #   command: -c "airflow db init && airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com && airflow connections add 'hdfs_default' --conn-type 'hdfs' --conn-host 'namenode' --conn-port '9001' && airflow connections add 'hive_default' --conn-type 'hive_cli' --conn-host 'hiveserver2' --conn-port '10000' --conn-schema 'default' --conn-login 'hive'"
- 
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres-airflow:5432/airflow
+      - AIRFLOW__CORE__FERNET_KEY=46BKJoQYlPPOexq0OhDZnIlNepKFf87WFwLbfzqDDho=
+    entrypoint: /bin/bash
+    command:
+      - "-c"
+      -  "airflow db init &&  airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com && mkdir -p /opt/airflow/dags /opt/airflow/logs /opt/airflow/plugins /opt/airflow/data &&    chown -R 50000:0 /opt/airflow/dags /opt/airflow/logs /opt/airflow/plugins /opt/airflow/data &&   chmod -R 755 /opt/airflow/dags /opt/airflow/logs /opt/airflow/plugins /opt/airflow/data"
+    networks:
+      - data_network
+
   hiveserver2:
-   image: apache/hive:4.0.1
-   depends_on:
-     metastore:
-       condition: service_started
-   restart: unless-stopped
-   container_name: hiveserver2
-   hostname: hiveserver2
-   environment:
-     SERVICE_NAME: 'hiveserver2'
-     HIVE_SERVER2_THRIFT_PORT: 10000
-   ports:
-     - '10000:10000'
-   volumes:
-     - ./warehouse:/opt/hive/data/warehouse
-   networks:
-     - data_network
-  # Hive Metastore Database
+    image: apache/hive:4.0.1
+    depends_on:
+      metastore:
+        condition: service_started
+    restart: unless-stopped
+    container_name: hiveserver2
+    hostname: hiveserver2
+    environment:
+      SERVICE_NAME: hiveserver2
+      HIVE_SERVER2_THRIFT_PORT: 10000
+    ports:
+      - "10000:10000"
+    volumes:
+      - ./warehouse:/opt/hive/data/warehouse
+    networks:
+      - data_network
+
   postgres_metastore_hive:
     image: postgres:13
     restart: unless-stopped
     container_name: postgres_metastore
     hostname: postgres
     environment:
-      POSTGRES_DB: 'metastore_db'
-      POSTGRES_USER: 'hive'
-      POSTGRES_PASSWORD: 'password'
+      POSTGRES_DB: metastore_db
+      POSTGRES_USER: hive
+      POSTGRES_PASSWORD: password
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U hive -d metastore_db"]
       interval: 5s
       timeout: 5s
       retries: 5
     ports:
-      - '5438:5432'
+      - "5431:5432"  # Kept as is, distinct from postgres-airflow
     volumes:
-      - ./hive-db:/var/lib/postgresql/data
+      - hive_metastore_data:/var/lib/postgresql/data
     networks:
       - data_network
 
-  # Hive Metastore
   metastore:
     image: apache/hive:4.0.1
     depends_on:
@@ -165,27 +133,25 @@ services:
     hostname: metastore
     environment:
       DB_DRIVER: postgres
-      SERVICE_NAME: 'metastore'
+      SERVICE_NAME: metastore
       HIVE_METASTORE_URI: thrift://metastore:9083
-      SERVICE_OPTS: >
+      SERVICE_OPTS: >-
         -Xmx1G
         -Djavax.jdo.option.ConnectionDriverName=org.postgresql.Driver
         -Djavax.jdo.option.ConnectionURL=jdbc:postgresql://postgres:5432/metastore_db
         -Djavax.jdo.option.ConnectionUserName=hive
         -Djavax.jdo.option.ConnectionPassword=password
-        
         -Ddatanucleus.autoCreateSchema=true
         -Dhive.metastore.schema.verification=false
         -Dhive.metastore.schema.verification.record.version=false
     ports:
-      - '9083:9083'
+      - "9083:9083"
     volumes:
       - ./warehouse:/opt/hive/data/warehouse
       - ./postgresql-42.6.0.jar:/opt/hive/lib/postgresql-42.6.0.jar
     networks:
       - data_network
 
-  # Hadoop NameNode
   namenode:
     image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
     container_name: namenode
@@ -193,12 +159,13 @@ services:
     restart: unless-stopped
     ports:
       - "9870:9870"
-      - "9001:9000"
+      - "9000:9000"
     environment:
       - CLUSTER_NAME=hadoop-cluster
-      - CORE_CONF_fs_defaultFS=hdfs://namenode:9001
+      - CORE_CONF_fs_defaultFS=hdfs://namenode:9000
+      - HDFS_CONF_dfs_replication=3
     volumes:
-      - ./hadoop/hadoop_namenode:/hadoop/dfs/name
+      - hadoop_namenode_data:/hadoop/dfs/name
     healthcheck:
       test: ["CMD", "curl", "-f", "http://namenode:9870"]
       interval: 30s
@@ -207,7 +174,6 @@ services:
     networks:
       - data_network
 
-  # Hadoop DataNode
   datanode:
     image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
     container_name: datanode
@@ -216,19 +182,17 @@ services:
     depends_on:
       - namenode
     environment:
-      - CORE_CONF_fs_defaultFS=hdfs://namenode:9001
+      - CORE_CONF_fs_defaultFS=hdfs://namenode:9000
     volumes:
-      - ./hadoop/hadoop_datanode:/hadoop/dfs/data
+      - hadoop_datanode_data:/hadoop/dfs/data
     networks:
       - data_network
 
- 
 volumes:
-  hive-db:
-  warehouse:
-  hadoop_namenode:
-  hadoop_datanode:
   postgres_airflow_data:
+  hive_metastore_data:
+  hadoop_namenode_data:
+  hadoop_datanode_data:
 
 networks:
   data_network:

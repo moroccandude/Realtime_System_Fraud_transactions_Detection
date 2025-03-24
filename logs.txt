@@ -1,0 +1,8 @@
+airflow users create \
+    --username ismail \
+    --firstname ismail \
+    --lastname ismail \
+    --role Admin \
+    --email ismailsamilacc@gmail.com
+
+password = 0000    
